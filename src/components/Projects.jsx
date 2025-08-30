@@ -3,17 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Calendar, Users, ShoppingCart, Home, CheckSquare } from "lucide-react";
 
-interface Project {
-  title: string;
-  description: string;
-  techStack: string[];
-  type: 'professional' | 'personal';
-  status: 'completed' | 'ongoing';
-  icon: React.ReactNode;
-  features: string[];
-}
-
-const projects: Project[] = [
+const projects = [
   {
     title: "Site Manager",
     description: "A complete Site Management System for contractors managing daily operations, attendance, costs, and profit calculations.",
@@ -140,7 +130,7 @@ const Projects = () => {
   );
 };
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project }) => {
   return (
     <Card className="p-6 bg-surface border-card-border hover-glow group">
       <div className="flex items-start justify-between mb-4">

@@ -10,7 +10,7 @@ const Footer = () => {
               © 2024 Full Stack Developer Portfolio. 
             </p>
             <p className="flex items-center justify-center md:justify-start gap-1 text-sm text-muted-foreground mt-1">
-              Built with <Heart className="w-4 h-4 text-red-500" /> using React & TypeScript
+              Built with <Heart className="w-4 h-4 text-red-500" /> using React & JavaScript
             </p>
           </div>
 
