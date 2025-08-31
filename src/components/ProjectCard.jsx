@@ -4,15 +4,12 @@ const ProjectCard = ({ project }) => {
     <div className="card bg-surface border border-card-border hover-glow group p-6 flex flex-col justify-between">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4 sm:gap-0">
         <div className="flex items-start sm:items-center gap-3 flex-1">
-          <div className="p-2 rounded-lg bg-gradient-primary text-primary-foreground shrink-0">
-            {project.icon}
-          </div>
           <div className="flex-1">
             <h4 className="text-xl font-semibold group-hover:text-primary transition-colors">
               {project.title}
             </h4>
             <span
-              className={`badge ${
+              className={`badge px-2 ${
                 project.status === "completed"
                   ? "badge-accent"
                   : "badge-warning"
@@ -24,12 +21,22 @@ const ProjectCard = ({ project }) => {
         </div>
 
         <div className="flex gap-2 flex-shrink-0">
-          <button className="btn btn-ghost btn-sm opacity-60 hover:opacity-100">
+          <a
+            href={project.repo_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost btn-sm opacity-60 hover:opacity-100"
+          >
             <FaGithub className="w-4 h-4" />
-          </button>
-          <button className="btn btn-ghost btn-sm opacity-60 hover:opacity-100">
+          </a>
+          <a
+            href={project.live_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost btn-sm opacity-60 hover:opacity-100"
+          >
             <FaExternalLinkAlt className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       </div>
 

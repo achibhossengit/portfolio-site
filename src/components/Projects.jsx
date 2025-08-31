@@ -1,102 +1,19 @@
-import {
-  FaExternalLinkAlt,
-  FaGithub,
-  FaCalendar,
-  FaUsers,
-  FaShoppingCart,
-  FaHome,
-  FaCheckSquare,
-  FaUserGraduate,
-  FaBriefcase,
-} from "react-icons/fa";
+import { FaUserGraduate, FaBriefcase } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
-
-const projects = [
-  {
-    title: "Site Manager",
-    description:
-      "A complete Site Management System for contractors managing daily operations, attendance, costs, and profit calculations.",
-    techStack: ["Django REST Framework", "React", "PostgreSQL"],
-    type: "professional",
-    status: "completed",
-    icon: <FaUsers className="w-6 h-6" />,
-    features: [
-      "Daily labour attendance (হাজিরা)",
-      "Site costs and cash management",
-      "Daily profit calculation",
-      "Full expense tracking",
-      "Role-based permissions (Site Manager, Main Manager, Contractor)",
-    ],
-  },
-  {
-    title: "PhiMart E-commerce",
-    description:
-      "Full-featured e-commerce platform with product management, shopping cart, and order processing capabilities.",
-    techStack: ["Django REST Framework", "React", "Redux", "PostgreSQL"],
-    type: "personal",
-    status: "completed",
-    icon: <FaShoppingCart className="w-6 h-6" />,
-    features: [
-      "Product catalog with categories",
-      "Shopping cart and checkout",
-      "User authentication",
-      "Order management",
-      "Admin dashboard",
-    ],
-  },
-  {
-    title: "Event Manager",
-    description:
-      "Event planning and management application with CRUD operations and user management.",
-    techStack: ["Django REST Framework", "React", "SQLite"],
-    type: "personal",
-    status: "completed",
-    icon: <FaCalendar className="w-6 h-6" />,
-    features: [
-      "Event creation and management",
-      "User registration system",
-      "Event categories and filtering",
-      "Responsive design",
-      "REST API integration",
-    ],
-  },
-  {
-    title: "FindRoomme",
-    description:
-      "Roommate finder application to help people find compatible roommates and shared accommodations.",
-    techStack: ["React", "Express.js", "Node.js", "MongoDB"],
-    type: "personal",
-    status: "ongoing",
-    icon: <FaHome className="w-6 h-6" />,
-    features: [
-      "User profiles and preferences",
-      "Roommate matching algorithm",
-      "Location-based search",
-      "Chat functionality",
-      "Property listings",
-    ],
-  },
-  {
-    title: "Task Manager",
-    description:
-      "Simple yet effective task management application built with Django for learning purposes.",
-    techStack: ["Django", "HTML/CSS", "JavaScript", "SQLite"],
-    type: "personal",
-    status: "completed",
-    icon: <FaCheckSquare className="w-6 h-6" />,
-    features: [
-      "Task CRUD operations",
-      "Priority levels",
-      "Due date management",
-      "Category organization",
-      "Progress tracking",
-    ],
-  },
-];
+import { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("/projects.json") // fetch from public folder
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+      .catch((err) => console.error("Failed to load projects:", err));
+  }, []);
+
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 px-2">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
