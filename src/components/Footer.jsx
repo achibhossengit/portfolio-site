@@ -2,20 +2,21 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-surface border-t border-card-border py-12">
-      <div className="container max-w-6xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <p className="text-muted-foreground">
+    <footer className="bg-surface border-t border-card-border p-2 md:p-5">
+      <div className="container max-w-6xl mx-auto">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-2 text-center md:text-left">
+          {/* Left Content */}
+          <div className="hidden md:flex flex-col gap-3">
+            <p className="text-muted-foreground text-sm sm:text-base">
               © 2025 Achib Hossen — Full Stack Developer
             </p>
-            <p className="flex items-center justify-center md:justify-start gap-1 text-sm text-muted-foreground mt-1">
-              Built with <FaHeart className="w-4 h-4 text-red-500" /> using
-              React & Django REST Framework
+            <p className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground">
+              Built using React & Django REST Framework
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Social Icons */}
+          <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
             <a
               href="https://github.com/achibhossengit"
               target="_blank"
