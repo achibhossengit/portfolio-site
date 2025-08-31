@@ -1,7 +1,4 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Calendar, Users, ShoppingCart, Home, CheckSquare } from "lucide-react";
+import { FaExternalLinkAlt, FaGithub, FaCalendar, FaUsers, FaShoppingCart, FaHome, FaCheckSquare } from "react-icons/fa";
 
 const projects = [
   {
@@ -10,7 +7,7 @@ const projects = [
     techStack: ["Django REST Framework", "React", "PostgreSQL"],
     type: 'professional',
     status: 'completed',
-    icon: <Users className="w-6 h-6" />,
+    icon: <FaUsers className="w-6 h-6" />,
     features: [
       "Daily labour attendance (হাজিরা)",
       "Site costs and cash management",
@@ -25,7 +22,7 @@ const projects = [
     techStack: ["Django REST Framework", "React", "Redux", "PostgreSQL"],
     type: 'personal',
     status: 'completed',
-    icon: <ShoppingCart className="w-6 h-6" />,
+    icon: <FaShoppingCart className="w-6 h-6" />,
     features: [
       "Product catalog with categories",
       "Shopping cart and checkout",
@@ -40,7 +37,7 @@ const projects = [
     techStack: ["Django REST Framework", "React", "SQLite"],
     type: 'personal',
     status: 'completed',
-    icon: <Calendar className="w-6 h-6" />,
+    icon: <FaCalendar className="w-6 h-6" />,
     features: [
       "Event creation and management",
       "User registration system",
@@ -55,7 +52,7 @@ const projects = [
     techStack: ["React", "Express.js", "Node.js", "MongoDB"],
     type: 'personal',
     status: 'ongoing',
-    icon: <Home className="w-6 h-6" />,
+    icon: <FaHome className="w-6 h-6" />,
     features: [
       "User profiles and preferences",
       "Roommate matching algorithm",
@@ -70,7 +67,7 @@ const projects = [
     techStack: ["Django", "HTML/CSS", "JavaScript", "SQLite"],
     type: 'personal',
     status: 'completed',
-    icon: <CheckSquare className="w-6 h-6" />,
+    icon: <FaCheckSquare className="w-6 h-6" />,
     features: [
       "Task CRUD operations",
       "Priority levels",
@@ -98,7 +95,7 @@ const Projects = () => {
         <div className="mb-12">
           <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <Users className="w-4 h-4 text-primary-foreground" />
+              <FaUsers className="w-4 h-4 text-primary-foreground" />
             </div>
             Professional Projects
           </h3>
@@ -114,7 +111,7 @@ const Projects = () => {
         <div>
           <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-              <Github className="w-4 h-4 text-secondary-foreground" />
+              <FaGithub className="w-4 h-4 text-secondary-foreground" />
             </div>
             Personal & Educational Projects
           </h3>
@@ -132,7 +129,7 @@ const Projects = () => {
 
 const ProjectCard = ({ project }) => {
   return (
-    <Card className="p-6 bg-surface border-card-border hover-glow group">
+    <div className="card bg-surface border border-card-border hover-glow group p-6">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-gradient-primary text-primary-foreground">
@@ -143,23 +140,23 @@ const ProjectCard = ({ project }) => {
               {project.title}
             </h4>
             <div className="flex items-center gap-2 mt-1">
-              <Badge variant={project.type === 'professional' ? 'default' : 'secondary'}>
+              <span className={`badge ${project.type === 'professional' ? 'badge-primary' : 'badge-secondary'}`}>
                 {project.type}
-              </Badge>
-              <Badge variant={project.status === 'completed' ? 'accent' : 'warning'}>
+              </span>
+              <span className={`badge ${project.status === 'completed' ? 'badge-accent' : 'badge-warning'}`}>
                 {project.status}
-              </Badge>
+              </span>
             </div>
           </div>
         </div>
         
         <div className="flex gap-2">
-          <Button size="sm" variant="ghost" className="opacity-60 hover:opacity-100">
-            <Github className="w-4 h-4" />
-          </Button>
-          <Button size="sm" variant="ghost" className="opacity-60 hover:opacity-100">
-            <ExternalLink className="w-4 h-4" />
-          </Button>
+          <button className="btn btn-ghost btn-sm opacity-60 hover:opacity-100">
+            <FaGithub className="w-4 h-4" />
+          </button>
+          <button className="btn btn-ghost btn-sm opacity-60 hover:opacity-100">
+            <FaExternalLinkAlt className="w-4 h-4" />
+          </button>
         </div>
       </div>
 
@@ -181,12 +178,12 @@ const ProjectCard = ({ project }) => {
 
       <div className="flex flex-wrap gap-2">
         {project.techStack.map((tech, idx) => (
-          <Badge key={idx} variant="outline" className="text-xs">
+          <span key={idx} className="badge badge-outline text-xs">
             {tech}
-          </Badge>
+          </span>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };
 

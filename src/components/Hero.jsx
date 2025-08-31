@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Download, Code, Database, Brain } from "lucide-react";
+import { FaDownload, FaCode, FaDatabase, FaBrain } from "react-icons/fa";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -37,7 +36,7 @@ const Hero = () => {
             {/* Tech Stack & Skills */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-card-border">
-                <Database className="w-6 h-6 text-primary" />
+                <FaDatabase className="w-6 h-6 text-primary" />
                 <div>
                   <h3 className="font-semibold">Backend Expert</h3>
                   <p className="text-sm text-muted-foreground">Django & DRF</p>
@@ -45,7 +44,7 @@ const Hero = () => {
               </div>
               
               <div className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-card-border">
-                <Code className="w-6 h-6 text-secondary" />
+                <FaCode className="w-6 h-6 text-secondary" />
                 <div>
                   <h3 className="font-semibold">Frontend Learning</h3>
                   <p className="text-sm text-muted-foreground">React & Express.js</p>
@@ -53,7 +52,7 @@ const Hero = () => {
               </div>
               
               <div className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-card-border">
-                <Brain className="w-6 h-6 text-accent" />
+                <FaBrain className="w-6 h-6 text-accent" />
                 <div>
                   <h3 className="font-semibold">Problem Solver</h3>
                   <p className="text-sm text-muted-foreground">150+ DSA Problems</p>
@@ -63,23 +62,20 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                variant="hero"
+              <button 
+                className="btn btn-primary btn-lg flex items-center gap-2"
                 onClick={handleResumeDownload}
-                className="flex items-center gap-2"
               >
-                <Download className="w-5 h-5" />
+                <FaDownload className="w-5 h-5" />
                 Download Resume
-              </Button>
+              </button>
               
-              <Button 
-                size="lg" 
-                variant="outline"
+              <button 
+                className="btn btn-outline btn-lg"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Projects
-              </Button>
+              </button>
             </div>
           </div>
 

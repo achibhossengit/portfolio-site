@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
               © 2024 Full Stack Developer Portfolio. 
             </p>
             <p className="flex items-center justify-center md:justify-start gap-1 text-sm text-muted-foreground mt-1">
-              Built with <Heart className="w-4 h-4 text-red-500" /> using React & JavaScript
+              Built with <FaHeart className="w-4 h-4 text-red-500" /> using React & JavaScript
             </p>
           </div>
 
@@ -21,7 +21,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-surface-hover hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a 
               href="https://linkedin.com" 
@@ -29,13 +29,13 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-surface-hover hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
             <a 
               href="mailto:your.email@example.com"
               className="p-2 rounded-full bg-surface-hover hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
             >
-              <Mail className="w-5 h-5" />
+              <FaEnvelope className="w-5 h-5" />
             </a>
           </div>
         </div>

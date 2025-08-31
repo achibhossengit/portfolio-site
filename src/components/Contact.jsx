@@ -1,11 +1,5 @@
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Send, Github, Linkedin, MapPin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { FaEnvelope, FaPaperPlane, FaGithub, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +9,6 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,10 +16,7 @@ const Contact = () => {
 
     // Simulate form submission
     setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
+      alert("Message sent successfully! Thank you for reaching out. I'll get back to you soon.");
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
@@ -56,7 +46,7 @@ const Contact = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-full bg-gradient-primary">
-                <Mail className="w-5 h-5 text-primary-foreground" />
+                <FaEnvelope className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
                 <h3 className="font-semibold">Email</h3>
@@ -66,7 +56,7 @@ const Contact = () => {
             
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-full bg-gradient-accent">
-                <MapPin className="w-5 h-5 text-accent-foreground" />
+                <FaMapMarkerAlt className="w-5 h-5 text-accent-foreground" />
               </div>
               <div>
                 <h3 className="font-semibold">Location</h3>
@@ -77,39 +67,44 @@ const Contact = () => {
             <div className="pt-2">
               <h3 className="font-semibold mb-2">Connect on Social</h3>
               <div className="flex gap-3">
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <Github className="w-4 h-4" />
+                <button className="btn btn-outline btn-sm flex items-center gap-2">
+                  <FaGithub className="w-4 h-4" />
                   GitHub
-                </Button>
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <Linkedin className="w-4 h-4" />
+                </button>
+                <button className="btn btn-outline btn-sm flex items-center gap-2">
+                  <FaLinkedin className="w-4 h-4" />
                   LinkedIn
-                </Button>
+                </button>
               </div>
             </div>
           </div>
 
           {/* Contact Form - Compact */}
-          <Card className="p-6 bg-surface border-card-border">
+          <div className="card bg-surface border border-card-border p-6">
             <h3 className="text-xl font-semibold mb-4">Send me a message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <Label htmlFor="name" className="text-sm">Name</Label>
-                  <Input
+                  <label htmlFor="name" className="label">
+                    <span className="label-text text-sm">Name</span>
+                  </label>
+                  <input
                     id="name"
                     name="name"
+                    type="text"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1"
+                    className="input input-bordered w-full"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-sm">Email</Label>
-                  <Input
+                  <label htmlFor="email" className="label">
+                    <span className="label-text text-sm">Email</span>
+                  </label>
+                  <input
                     id="email"
                     name="email"
                     type="email"
@@ -117,27 +112,32 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1"
+                    className="input input-bordered w-full"
                   />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="subject" className="text-sm">Subject</Label>
-                <Input
+                <label htmlFor="subject" className="label">
+                  <span className="label-text text-sm">Subject</span>
+                </label>
+                <input
                   id="subject"
                   name="subject"
+                  type="text"
                   placeholder="Project Collaboration"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="mt-1"
+                  className="input input-bordered w-full"
                 />
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-sm">Message</Label>
-                <Textarea
+                <label htmlFor="message" className="label">
+                  <span className="label-text text-sm">Message</span>
+                </label>
+                <textarea
                   id="message"
                   name="message"
                   placeholder="Tell me about your project..."
@@ -145,28 +145,26 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="mt-1"
+                  className="textarea textarea-bordered w-full"
                 />
               </div>
 
-              <Button 
+              <button 
                 type="submit" 
-                variant="hero"
-                size="default"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2"
+                className="btn btn-primary w-full flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>Sending...</>
                 ) : (
                   <>
-                    <Send className="w-4 h-4" />
+                    <FaPaperPlane className="w-4 h-4" />
                     Send Message
                   </>
                 )}
-              </Button>
+              </button>
             </form>
-          </Card>
+          </div>
         </div>
       </div>
     </section>
