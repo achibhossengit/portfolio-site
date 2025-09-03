@@ -55,7 +55,7 @@ const CareerRoadmap = () => {
     setMonths(monthsArray);
     setSelectedMonth(
       monthsArray.find((m) => m.isCurrent)?.id ||
-        monthsArray[monthsArray.length - 1]?.id
+        monthsArray[0]?.id
     );
   }, [goalsData]);
 
