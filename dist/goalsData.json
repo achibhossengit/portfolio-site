@@ -26,13 +26,7 @@
   "2025-03": [
     { "isdone": true, "title": "Learn GraphQL" },
     { "isdone": false, "title": "Improve UI/UX design skills" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
-    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" }, 
     { "isdone": false, "title": "Network with industry professionals" }
   ],
   "2025-04": [

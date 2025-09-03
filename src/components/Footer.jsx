@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-surface border-t border-card-border p-2 md:p-5">
+    <footer className="bg-surface border-t border-primary p-2 md:p-5 mt-20">
       <div className="container max-w-6xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-2 text-center md:text-left">
           {/* Left Content */}

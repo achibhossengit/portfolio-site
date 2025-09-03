@@ -56,9 +56,9 @@ const ProjectCard = ({ project }) => {
         </ul>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {project.techStack.map((tech, idx) => (
-          <span key={idx} className="badge badge-outline text-xs sm:text-sm">
+          <span key={idx} className="text-xs sm:text-sm">
             {tech}
           </span>
         ))}

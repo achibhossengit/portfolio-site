@@ -71,8 +71,10 @@ const CareerRoadmap = () => {
     );
   }
   return (
-    <div className="container max-w-6xl mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-8">Career Roadmap</h2>
+    <div className="container max-w-6xl mx-auto mt-16">
+      <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+        Career Roadmap
+      </h2>
 
       <div className="overflow-x-auto pb-4 ">
         <div className="relative flex space-x-6 min-w-max px-2">
@@ -120,7 +122,7 @@ const CareerRoadmap = () => {
       {selectedMonth && (
         <div
           key={selectedMonth}
-          className="max-w-xl h-56 overflow-auto mx-auto my-2 bg-white p-6 rounded-lg shadow-lg border border-gray-200"
+          className="max-w-xl h-56 overflow-auto mx-auto border-2 border-white rounded-lg shadow-lg my-2 p-6"
         >
           <ul className="animate-in fade-in zoom-in-95 duration-500 space-y-3">
             {months
@@ -135,9 +137,7 @@ const CareerRoadmap = () => {
                   />
                   <span
                     className={`text-sm leading-relaxed ${
-                      goal.isdone
-                        ? "line-through text-gray-400"
-                        : "text-gray-700"
+                      goal.isdone && "line-through"
                     }`}
                   >
                     {goal.title}
