@@ -13,9 +13,9 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" className="py-20 px-2">
+    <section id="projects" className="px-0 md:px-2 mt-10">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-5">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
@@ -26,7 +26,7 @@ const Projects = () => {
         </div>
 
         {/* Professional Projects */}
-        <div className="mb-12">
+        <div className="mb-10">
           <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
               <FaBriefcase className="w-4 h-4 text-primary-foreground" />

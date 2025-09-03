@@ -1,0 +1,62 @@
+{
+  "2024-09": [
+    { "isdone": true, "title": "Learn advanced React patterns" },
+    { "isdone": false, "title": "Build 3 new portfolio projects" }
+  ],
+  "2024-10": [
+    { "isdone": false, "title": "Master TypeScript integration" },
+    { "isdone": true, "title": "Complete backend certification" }
+  ],
+  "2024-11": [
+    { "isdone": false, "title": "Contribute to open source project" },
+    { "isdone": false, "title": "Attend tech conference" }
+  ],
+  "2024-12": [
+    { "isdone": true, "title": "Develop mobile app with React Native" },
+    { "isdone": false, "title": "Start technical blog" }
+  ],
+  "2025-01": [
+    { "isdone": false, "title": "Explore Web3 technologies" },
+    { "isdone": true, "title": "Deepen Node.js expertise" }
+  ],
+  "2025-02": [
+    { "isdone": false, "title": "Obtain AWS certification" },
+    { "isdone": false, "title": "Build full-stack SaaS application" }
+  ],
+  "2025-03": [
+    { "isdone": true, "title": "Learn GraphQL" },
+    { "isdone": false, "title": "Improve UI/UX design skills" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Complete advanced course" },
+    { "isdone": false, "title": "Network with industry professionals" }
+  ],
+  "2025-04": [
+    { "isdone": false, "title": "Build AI-powered application" },
+    { "isdone": true, "title": "Complete system design course" }
+  ],
+  "2025-05": [
+    { "isdone": false, "title": "Launch personal SaaS product" },
+    { "isdone": false, "title": "Mentor junior developers" }
+  ],
+  "2025-06": [
+    { "isdone": true, "title": "Speak at tech meetup" },
+    { "isdone": false, "title": "Optimize performance skills" }
+  ],
+  "2025-07": [
+    { "isdone": false, "title": "Explore machine learning" },
+    { "isdone": false, "title": "Build developer tools" }
+  ],
+  "2025-08": [
+    { "isdone": false, "title": "Start tech podcast" },
+    { "isdone": true, "title": "Contribute to major open source project" }
+  ],
+  "2025-09": [
+    { "isdone": false, "title": "Start tech podcast" },
+    { "isdone": true, "title": "Contribute to major open source project" }
+  ]
+}
