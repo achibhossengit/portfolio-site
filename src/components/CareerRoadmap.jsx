@@ -77,7 +77,7 @@ const CareerRoadmap = () => {
       </h2>
 
       <div className="overflow-x-auto pb-4 ">
-        <div className="relative flex space-x-6 min-w-max px-2">
+        <div className="relative flex space-x-6 min-w-max px-0 sm:px-2">
           {/* Horizontal line behind all dots */}
           <div className="absolute top-[52px] left-0 right-0 h-0.5 bg-blue-200 z-0"></div>
 

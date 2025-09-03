@@ -74,7 +74,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                className="btn btn-primary btn-lg flex items-center justify-center gap-2 w-full sm:w-auto"
+                className="btn btn-primary flex items-center justify-center gap-2 w-full sm:w-auto"
                 onClick={handleResumeDownload}
               >
                 <FaDownload className="w-5 h-5" />
@@ -82,7 +82,7 @@ const Hero = () => {
               </button>
 
               <button
-                className="btn btn-outline btn-lg w-full sm:w-auto"
+                className="btn btn-outline w-full sm:w-auto"
                 onClick={() =>
                   document
                     .getElementById("projects")

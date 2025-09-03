@@ -16,10 +16,12 @@ const Projects = () => {
   return (
     <section id="projects" className="px-0 md:px-2 mt-10">
       <div className="container max-w-6xl mx-auto">
-        <div className="flex gap-5 mb-5">
+        <div className="flex gap-5 mb-5 flex-wrap">
           <button
             onClick={() => setProjectType(1)}
-            className={`btn btn-primary ${projectType != 1 && "btn-outline"}`}
+            className={`btn btn-sm ${
+              projectType == 1 ? "btn-primary" : "btn-outline"
+            }`}
           >
             <FaBriefcase />
             Professional Projects
@@ -27,7 +29,9 @@ const Projects = () => {
 
           <button
             onClick={() => setProjectType(2)}
-            className={`btn btn-primary ${projectType != 2 && "btn-outline"}`}
+            className={`btn btn-sm ${
+              projectType == 2 ? "btn-primary" : "btn-outline"
+            }`}
           >
             <FaUserGraduate />
             Learning Purpose
