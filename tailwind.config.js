@@ -17,8 +17,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
-				mono: ['JetBrains Mono', 'monospace'],
+				sans: ['Instrument Sans', 'sans-serif'],
+				mono: ['IBM Plex Mono', 'monospace'],
 			},
 			colors: {
 				input: 'hsl(var(--input))',
