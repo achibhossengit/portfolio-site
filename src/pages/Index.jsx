@@ -288,7 +288,11 @@ const Index = () => {
                     </a>
                   )}
                 </div>
-                <p className="project-desc">{project.description}</p>
+                <p className="project-desc">
+                  {lang === "bn"
+                    ? project.description_bn || project.description
+                    : project.description}
+                </p>
                 <p className="project-stack">{project.techStack.join(", ")}</p>
               </li>
             ))}
