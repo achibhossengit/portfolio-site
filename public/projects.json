@@ -1,82 +1,56 @@
 [
   {
-    "title": "FindRoomme",
-    "description": "Roommate finder application to help people find compatible roommates and shared accommodations.",
-    "techStack": ["React", "Express.js", "Node.js", "MongoDB"],
-    "type": "personal",
-    "status": "ongoing",
-    "features": [
-      "User profiles and preferences",
-      "Roommate matching algorithm",
-      "Location-based search",
-      "Chat functionality",
-      "Property listings"
-    ],
-    "repo_link": "https://github.com/achibhossengit/findroomme",
-    "live_link": "https://findroomme.example.com"
-  },
-  {
     "title": "Site Manager",
-    "description": "A complete Site Management System for contractors managing daily operations, attendance, costs, and profit calculations.",
-    "techStack": ["Django REST Framework", "React", "PostgreSQL"],
+    "description": "Employee management and cost tracking system for construction sites — attendance, expenses, daily records, and role-based access for managers and contractors.",
+    "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "type": "professional",
-    "status": "completed",
-    "features": [
-      "Daily labour attendance (হাজিরা)",
-      "Site costs and cash management",
-      "Daily profit calculation",
-      "Full expense tracking",
-      "Role-based permissions (Site Manager, Main Manager, Contractor)"
-    ],
-    "repo_link": "https://github.com/achibhossengit/site-manager",
-    "live_link": "https://site-manager.example.com"
+    "status": "ongoing",
+    "repo_link": "https://github.com/achibhossengit/site-manager-api",
+    "live_link": "https://github.com/achibhossengit/site-manager-client"
   },
   {
-    "title": "PhiMart E-commerce",
-    "description": "Full-featured e-commerce platform with product management, shopping cart, and order processing capabilities.",
-    "techStack": ["Django REST Framework", "React", "Redux", "PostgreSQL"],
+    "title": "PhiMart",
+    "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
+    "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "type": "personal",
     "status": "completed",
-    "features": [
-      "Product catalog with categories",
-      "Shopping cart and checkout",
-      "User authentication",
-      "Order management",
-      "Admin dashboard"
-    ],
-    "repo_link": "https://github.com/achibhossengit/phi-mart",
-    "live_link": "https://phimart.example.com"
+    "repo_link": "https://github.com/achibhossengit/Phimart-client",
+    "live_link": "https://phimart-client-ruddy.vercel.app"
+  },
+  {
+    "title": "Ecom Django Fullstack",
+    "description": "Full-stack e-commerce application built with Django — product management and shopping workflow in one codebase.",
+    "techStack": ["Django", "Python", "PostgreSQL"],
+    "type": "personal",
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/ecom-django-fullstack",
+    "live_link": "https://github.com/achibhossengit/ecom-django-fullstack"
+  },
+  {
+    "title": "Find Roomies",
+    "description": "Roommate finder with client and server — profiles, preferences, and matching for shared accommodations.",
+    "techStack": ["React", "Node.js", "Express.js", "MongoDB"],
+    "type": "personal",
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/Find-Roomies-Server",
+    "live_link": "https://github.com/achibhossengit/Find-Roomies-Client"
+  },
+  {
+    "title": "Library Manager",
+    "description": "Library management system with separate client and server for books, users, and borrowing workflows.",
+    "techStack": ["React", "Node.js", "Express.js"],
+    "type": "personal",
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/Library-Manager-Server",
+    "live_link": "https://github.com/achibhossengit/Library-Manager-Client"
   },
   {
     "title": "Event Manager",
-    "description": "Event planning and management application with CRUD operations and user management.",
-    "techStack": ["Django REST Framework", "React", "SQLite"],
+    "description": "Event planning app with CRUD operations, categories, and user management.",
+    "techStack": ["Django", "HTML", "CSS", "JavaScript"],
     "type": "personal",
     "status": "completed",
-    "features": [
-      "Event creation and management",
-      "User registration system",
-      "Event categories and filtering",
-      "Responsive design",
-      "REST API integration"
-    ],
-    "repo_link": "https://github.com/achibhossengit/event-manager",
-    "live_link": "https://event-manager.example.com"
-  },
-  {
-    "title": "Task Manager",
-    "description": "Simple yet effective task management application built with Django for learning purposes.",
-    "techStack": ["Django", "HTML/CSS", "JavaScript", "SQLite"],
-    "type": "personal",
-    "status": "completed",
-    "features": [
-      "Task CRUD operations",
-      "Priority levels",
-      "Due date management",
-      "Category organization",
-      "Progress tracking"
-    ],
-    "repo_link": "https://github.com/achibhossengit/task-manager",
-    "live_link": "https://task-manager.example.com"
+    "repo_link": "https://github.com/achibhossengit/Event-Manager",
+    "live_link": "https://github.com/achibhossengit/Event-Manager"
   }
 ]

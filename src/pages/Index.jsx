@@ -6,8 +6,8 @@ const copy = {
   en: {
     name: "Achib Hossen",
     role: "Backend developer",
-    stack: "Django, DRF, Postgres, etc.",
-    bio: "Hi, I am glad to see you! I help build maintainable backend solutions. For the last 1.5+ years I have worked with Django, DRF, and Postgres. Before that I explored React, Node.js, and more to understand the full web development workflow. I started my journey with DSA, algorithms, and problem solving in C, C#, and Python.",
+    stack: "Python, Django, DRF, React, PostgreSQL",
+    bio: "Hi, I am glad to see you! I am a backend developer who loves complex problems and system design. I build maintainable APIs and apps with Django, DRF, and PostgreSQL — currently focused on a Site Management system for employees, managers, and daily site records. I also work with React and JavaScript to cover the full web workflow. My foundation is DSA and problem solving with Python, C++, and JavaScript.",
     freeTime: {
       before: "In free time I love to ",
       read: "read",
@@ -20,8 +20,8 @@ const copy = {
   bn: {
     name: "আছিব হোসেন",
     role: "ব্যাকএন্ড ডেভেলপার",
-    stack: "Django, DRF, Postgres, ইত্যাদি",
-    bio: "হাই, আপনাকে দেখে ভালো লাগলো! আমি মেইনটেইনেবল ব্যাকএন্ড সলিউশন বানাতে সাহায্য করি। গত ১.৫+ বছর ধরে Django, DRF এবং Postgres নিয়ে কাজ করছি। তার আগে পুরো ওয়েব ডেভেলপমেন্ট ওয়ার্কফ্লো বোঝার জন্য React, Node.js ইত্যাদি এক্সপ্লোর করেছি। যাত্রা শুরু হয়েছিল DSA, অ্যালগরিদম এবং C, C#, Python দিয়ে প্রবলেম সলভিং দিয়ে।",
+    stack: "Python, Django, DRF, React, PostgreSQL",
+    bio: "হাই, আপনাকে দেখে ভালো লাগলো! আমি একজন ব্যাকএন্ড ডেভেলপার — জটিল প্রবলেম এবং সিস্টেম ডিজাইন নিয়ে কাজ করতে ভালোবাসি। Django, DRF এবং PostgreSQL দিয়ে মেইনটেইনেবল API ও অ্যাপ বানাই। এখন সাইট ম্যানেজমেন্ট সিস্টেমে কাজ করছি — এমপ্লয়ি, ম্যানেজার এবং ডেইলি সাইট রেকর্ড নিয়ে। পুরো ওয়েব ওয়ার্কফ্লোর জন্য React ও JavaScript-ও ব্যবহার করি। ভিত্তি হলো DSA এবং Python, C++, JavaScript দিয়ে প্রবলেম সলভিং।",
     freeTime: {
       before: "ফাঁকা সময়ে আমি ",
       read: "পড়া",
