@@ -10,8 +10,17 @@ const contributionTheme = {
   dark: ["#1a222d", "#244842", "#3a7a6e", "#5aafa0", "#7dd3c0"],
 };
 
-const Stack = ({ children }) => <span className="hl-stack">{children}</span>;
-const Key = ({ children }) => <span className="hl-key">{children}</span>;
+const Hl = ({ children }) => <span className="hl">{children}</span>;
+
+/** Career start — change this to adjust experience years */
+const CAREER_START = new Date("2025-01-01");
+
+const getExperienceLabel = (lang) => {
+  const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
+  const years = (Date.now() - CAREER_START.getTime()) / msPerYear;
+  const rounded = Math.max(0.5, Math.floor(years * 2) / 2);
+  return lang === "bn" ? `${rounded}+ বছর` : `${rounded}+ years`;
+};
 
 const copy = {
   en: {
@@ -20,32 +29,40 @@ const copy = {
     activityTitle: "GitHub",
     visitsLabel: "visits",
     intro: (
-      <>
-        Hi, I am <span className="hl-name">Achib Hossen</span> a{" "}
-        <span className="hl-role">Backend developer</span> working with{" "}
-        <Stack>Django</Stack>, <Stack>DRF</Stack>, <Stack>Postgres</Stack>,{" "}
-        <Stack>Docker</Stack>, <Stack>React</Stack>, <Stack>Node.js</Stack> etc.
-      </>
+      <p>
+        Hi, I&apos;m <Hl>Achib Hossen</Hl>, a <Hl>Backend Developer</Hl>{" "}
+        specializing in building scalable, maintainable, and reliable backend
+        solutions with <Hl>Django</Hl>, <Hl>Django REST Framework</Hl>, and{" "}
+        <Hl>PostgreSQL</Hl>.
+      </p>
     ),
-    bio: (
+    bio: (experience) => (
       <>
-        I help to build <Key>maintainable Backend solution</Key>. Last{" "}
-        <Key>1.5+ years</Key> I worked with <Stack>Django</Stack>,{" "}
-        <Stack>DRF</Stack> and <Stack>Postgres</Stack> etc. Before that I
-        explore <Stack>React</Stack>, <Stack>Node.js</Stack> etc to understand
-        the complete <Key>web development workflow</Key>. I started my journey
-        with <Key>DSA</Key>, <Key>Algorithm</Key>, <Key>Problem solving</Key>{" "}
-        with <Stack>C</Stack>, <Stack>C++</Stack>, <Stack>Python</Stack>.
+        <p>
+          Over the past <Hl>{experience}</Hl>, I&apos;ve built and maintained
+          production-ready APIs, focusing on clean architecture, performance,
+          and long-term maintainability.
+        </p>
+        <p>
+          Currently working on a <Hl>multi-tenant SaaS</Hl> application that
+          helps construction companies manage workers and expenses across
+          different sites.
+        </p>
+        <p>
+          My journey into software development started with <Hl>DSA</Hl>,{" "}
+          <Hl>algorithms</Hl>, and <Hl>problem-solving</Hl>, using <Hl>C</Hl>,{" "}
+          <Hl>C++</Hl>, and <Hl>Python</Hl>. Along the way, I explored{" "}
+          <Hl>React</Hl>, <Hl>Node.js</Hl>, and other technologies to better
+          understand the complete web development workflow. Now, I&apos;m
+          primarily focused on backend development, building reliable, scalable,
+          and maintainable systems.
+        </p>
       </>
     ),
     freeTime: {
-      before: "In free time I love to ",
-      read: "read",
-      middle: ", ",
-      journal: "writing journal",
-      and: " and ",
-      explore: "explore new places",
-      with: " with ",
+      before: "Outside of coding, I enjoy ",
+      read: "reading",
+      middle: ", writing in my journal, and exploring new places by ",
       bicycle: "bicycle",
       after: ".",
     },
@@ -56,35 +73,40 @@ const copy = {
     activityTitle: "গিটহাব",
     visitsLabel: "ভিজিট",
     intro: (
-      <>
-        হাই, আমি <span className="hl-name">আছিব হোসেন</span> — একজন{" "}
-        <span className="hl-role">Backend developer</span>. কাজ করি{" "}
-        <Stack>Django</Stack>, <Stack>DRF</Stack>, <Stack>Postgres</Stack>,{" "}
-        <Stack>Docker</Stack>, <Stack>React</Stack>, <Stack>Node.js</Stack>{" "}
-        ইত্যাদি নিয়ে।
-      </>
+      <p>
+        হাই, আমি <Hl>আছিব হোসেন</Hl> — একজন <Hl>Backend Developer</Hl>.{" "}
+        <Hl>Django</Hl>, <Hl>Django REST Framework</Hl> এবং <Hl>PostgreSQL</Hl>{" "}
+        দিয়ে scalable, maintainable ও reliable backend solution বানাতে
+        বিশেষজ্ঞ।
+      </p>
     ),
-    bio: (
+    bio: (experience) => (
       <>
-        আমি <Key>maintainable Backend solution</Key> বানাতে সাহায্য করি। গত{" "}
-        <Key>১.৫+ বছর</Key> ধরে <Stack>Django</Stack>, <Stack>DRF</Stack> এবং{" "}
-        <Stack>Postgres</Stack> নিয়ে কাজ করছি। তার আগে সম্পূর্ণ{" "}
-        <Key>web development workflow</Key> বোঝার জন্য <Stack>React</Stack>,{" "}
-        <Stack>Node.js</Stack> এক্সপ্লোর করেছি। যাত্রা শুরু{" "}
-        <Key>DSA</Key>, <Key>Algorithm</Key>, <Key>Problem solving</Key> দিয়ে —{" "}
-        <Stack>C</Stack>, <Stack>C++</Stack>, <Stack>Python</Stack> সহ।
+        <p>
+          গত <Hl>{experience}</Hl> ধরে production-ready API বানিয়েছি ও maintain
+          করেছি — clean architecture, performance এবং long-term
+          maintainability-এর উপর ফোকাস রেখে।
+        </p>
+        <p>
+          এখন একটি <Hl>multi-tenant SaaS</Hl> অ্যাপে কাজ করছি, যা construction
+          company-দের বিভিন্ন site-এ worker ও expense ম্যানেজ করতে সাহায্য করে।
+        </p>
+        <p>
+          সফটওয়্যার ডেভেলপমেন্ট যাত্রা শুরু হয়েছিল <Hl>DSA</Hl>,{" "}
+          <Hl>algorithms</Hl> ও <Hl>problem-solving</Hl> দিয়ে — <Hl>C</Hl>,{" "}
+          <Hl>C++</Hl> এবং <Hl>Python</Hl> ব্যবহার করে। পথে <Hl>React</Hl>,{" "}
+          <Hl>Node.js</Hl>সহ আরও কিছু এক্সপ্লোর করেছি পুরো web development
+          workflow বোঝার জন্য। এখন মূল ফোকাস backend development — reliable,
+          scalable ও maintainable সিস্টেম বানানো।
+        </p>
       </>
     ),
     freeTime: {
-      before: "ফাঁকা সময়ে আমি ",
+      before: "কোডিংয়ের বাইরে আমি ",
       read: "পড়া",
-      middle: ", ",
-      journal: "জার্নাল লেখা",
-      and: " এবং ",
-      explore: "নতুন জায়গা ঘোরা",
-      with: " — ",
+      middle: ", জার্নাল লেখা এবং নতুন জায়গা ঘোরা — ",
       bicycle: "সাইকেল",
-      after: " নিয়ে।",
+      after: " নিয়ে উপভোগ করি।",
     },
   },
 };
@@ -107,6 +129,7 @@ const Index = () => {
   const [projects, setProjects] = useState([]);
   const [visits, setVisits] = useState(null);
   const t = copy[lang];
+  const experience = getExperienceLabel(lang);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -195,13 +218,13 @@ const Index = () => {
             alt={t.name}
             className="avatar"
           />
-          <p className="intro">{t.intro}</p>
+          <div className="intro">{t.intro}</div>
         </section>
 
         <div className="divider" role="separator" />
 
         <section className="content">
-          <p className="bio">{t.bio}</p>
+          <div className="bio">{t.bio(experience)}</div>
           <p className="free-time">
             {t.freeTime.before}
             <a
@@ -213,10 +236,6 @@ const Index = () => {
               {t.freeTime.read}
             </a>
             {t.freeTime.middle}
-            <span className="hl-key">{t.freeTime.journal}</span>
-            {t.freeTime.and}
-            <span className="hl-key">{t.freeTime.explore}</span>
-            {t.freeTime.with}
             <a
               className="tag"
               href="https://www.strava.com/athletes/164300382"
