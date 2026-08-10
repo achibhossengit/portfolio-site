@@ -77,6 +77,7 @@
   padding: 0.85rem 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
   animation: rise 0.7s ease-out both;
 }
 
@@ -123,6 +124,8 @@
   align-items: center;
   gap: 1.25rem;
   padding: 0.25rem 0.15rem 0.35rem;
+  width: 100%;
+  max-width: 100%;
   animation: rise 0.8s ease-out 0.1s both;
 }
 
@@ -138,6 +141,7 @@
 .identity {
   flex: 1;
   min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -152,16 +156,17 @@
 }
 
 .role,
-.stack {
+.tech-stack {
   margin: 0;
   color: var(--muted);
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-.stack {
+.tech-stack {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -304,9 +309,13 @@ a.tag:hover {
     gap: 0.85rem;
   }
 
+  .identity {
+    align-items: center;
+    width: 100%;
+  }
+
   .avatar {
     width: 100px;
     height: 100px;
   }
-
 }
