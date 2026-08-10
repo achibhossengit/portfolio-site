@@ -283,6 +283,17 @@ a.tag:hover {
   line-height: 1.5;
 }
 
+.visit-count {
+  margin: 1.25rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 @keyframes rise {
   from {
     opacity: 0;

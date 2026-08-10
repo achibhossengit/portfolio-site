@@ -16,6 +16,7 @@ const copy = {
       after: ".",
     },
     projectsTitle: "Projects",
+    visitsLabel: "visits",
   },
   bn: {
     name: "আছিব হোসেন",
@@ -30,13 +31,27 @@ const copy = {
       after: " নিয়ে নতুন জায়গা ঘুরতে ভালোবাসি।",
     },
     projectsTitle: "প্রজেক্টস",
+    visitsLabel: "ভিজিট",
   },
+};
+
+const VISIT_CACHE_KEY = "portfolio-visit-count";
+const VISIT_COUNTER_URL =
+  "https://hitscounter.dev/api/hit?url=https%3A%2F%2Fachibhossen.me&label=Visitors&color=%237dd3c0";
+
+const parseVisitCount = (svgText) => {
+  const labelMatch = svgText.match(/aria-label="[^"]*?(\d[\d,]*)\s*\/\s*(\d[\d,]*)"/i);
+  if (labelMatch) return Number(labelMatch[1].replace(/,/g, ""));
+  const titleMatch = svgText.match(/<title>[^<]*?(\d[\d,]*)\s*\/\s*(\d[\d,]*)/i);
+  if (titleMatch) return Number(titleMatch[1].replace(/,/g, ""));
+  return null;
 };
 
 const Index = () => {
   const [theme, setTheme] = useState("dark");
   const [lang, setLang] = useState("en");
   const [projects, setProjects] = useState([]);
+  const [visits, setVisits] = useState(null);
   const t = copy[lang];
 
   useEffect(() => {
@@ -60,6 +75,29 @@ const Index = () => {
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch(() => setProjects([]));
+  }, []);
+
+  useEffect(() => {
+    const cached = sessionStorage.getItem(VISIT_CACHE_KEY);
+    if (cached) {
+      setVisits(Number(cached));
+      return;
+    }
+
+    let active = true;
+    fetch(VISIT_COUNTER_URL)
+      .then((res) => res.text())
+      .then((svg) => {
+        const count = parseVisitCount(svg);
+        if (!active || count == null) return;
+        sessionStorage.setItem(VISIT_CACHE_KEY, String(count));
+        setVisits(count);
+      })
+      .catch(() => {});
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
@@ -169,6 +207,12 @@ const Index = () => {
             ))}
           </ul>
         </section>
+
+        {visits != null && (
+          <p className="visit-count" aria-live="polite">
+            {visits.toLocaleString(lang === "bn" ? "bn-BD" : "en-US")} {t.visitsLabel}
+          </p>
+        )}
       </div>
     </main>
   );
