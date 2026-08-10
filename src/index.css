@@ -96,6 +96,7 @@
   height: 2rem;
   color: var(--fg);
   opacity: 0.85;
+  text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaUser, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import profileImage from "@/assets/hero-image.jpg";
 
 const copy = {
@@ -69,14 +69,15 @@ const Index = () => {
     <main className="page">
       <div className="frame">
         <header className="topbar">
-          <button
-            type="button"
+          <a
             className="icon-btn"
-            aria-label="Profile"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            href="https://github.com/achibhossengit"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
           >
-            <FaUser />
-          </button>
+            <FaGithub />
+          </a>
           <button
             type="button"
             className="lang-btn"
