@@ -17,14 +17,15 @@
 }
 
 [data-theme="light"] {
-  --bg: #f3efe6;
-  --bg-soft: #fffdf8;
-  --fg: #1a1f27;
-  --muted: #5c6573;
-  --line: rgba(26, 31, 39, 0.2);
-  --tag: #0f766e;
-  --frame: rgba(26, 31, 39, 0.45);
-  --glow: rgba(15, 118, 110, 0.06);
+  /* Solarized Light — stronger contrast for body text */
+  --bg: #fdf6e3;
+  --bg-soft: #eee8d5;
+  --fg: #073642;
+  --muted: #586e75;
+  --line: rgba(7, 54, 66, 0.22);
+  --tag: #2aa198;
+  --frame: rgba(7, 54, 66, 0.45);
+  --glow: rgba(42, 161, 152, 0.08);
 }
 
 @layer base {
