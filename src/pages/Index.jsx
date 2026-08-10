@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaGithub, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { GitHubCalendar } from "react-github-calendar";
 import profileImage from "@/assets/hero-image.jpg";
 
@@ -184,31 +184,47 @@ const Index = () => {
     <main className="page">
       <div className="frame">
         <header className="topbar">
-          <a
-            className="icon-btn"
-            href="https://github.com/achibhossengit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <button
-            type="button"
-            className="lang-btn"
-            aria-label="Switch language"
-            onClick={toggleLang}
-          >
-            {lang.toUpperCase()}
-          </button>
-          <button
-            type="button"
-            className="icon-btn"
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <FaSun /> : <FaMoon />}
-          </button>
+          <p className="visit-count" aria-live="polite">
+            {visits != null
+              ? `${visits.toLocaleString(lang === "bn" ? "bn-BD" : "en-US")} ${t.visitsLabel}`
+              : ""}
+          </p>
+          <div className="topbar-actions">
+            <a
+              className="icon-btn"
+              href="https://github.com/achibhossengit"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a
+              className="icon-btn"
+              href="https://www.linkedin.com/in/achibhossen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+            <button
+              type="button"
+              className="lang-btn"
+              aria-label="Switch language"
+              onClick={toggleLang}
+            >
+              {lang.toUpperCase()}
+            </button>
+            <button
+              type="button"
+              className="icon-btn"
+              aria-label="Toggle theme"
+              onClick={toggleTheme}
+            >
+              {theme === "dark" ? <FaSun /> : <FaMoon />}
+            </button>
+          </div>
         </header>
 
         <section className="profile">
@@ -250,6 +266,24 @@ const Index = () => {
 
         <div className="divider" role="separator" />
 
+        <section className="activity">
+          <h2 className="section-title">{t.activityTitle}</h2>
+          <div className="calendar-wrap">
+            <GitHubCalendar
+              username={GITHUB_USERNAME}
+              colorScheme={theme === "dark" ? "dark" : "light"}
+              theme={contributionTheme}
+              blockSize={11}
+              blockMargin={3}
+              fontSize={11}
+              hideColorLegend={false}
+              hideMonthLabels={false}
+            />
+          </div>
+        </section>
+
+        <div className="divider" role="separator" />
+
         <section className="projects">
           <h2 className="section-title">{t.projectsTitle}</h2>
           <ul className="project-list">
@@ -281,30 +315,6 @@ const Index = () => {
             ))}
           </ul>
         </section>
-
-        <div className="divider" role="separator" />
-
-        <section className="activity">
-          <h2 className="section-title">{t.activityTitle}</h2>
-          <div className="calendar-wrap">
-            <GitHubCalendar
-              username={GITHUB_USERNAME}
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              theme={contributionTheme}
-              blockSize={11}
-              blockMargin={3}
-              fontSize={11}
-              hideColorLegend={false}
-              hideMonthLabels={false}
-            />
-          </div>
-        </section>
-
-        {visits != null && (
-          <p className="visit-count" aria-live="polite">
-            {visits.toLocaleString(lang === "bn" ? "bn-BD" : "en-US")} {t.visitsLabel}
-          </p>
-        )}
       </div>
     </main>
   );
