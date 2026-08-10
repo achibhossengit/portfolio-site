@@ -12,16 +12,6 @@ const contributionTheme = {
 
 const Hl = ({ children }) => <span className="hl">{children}</span>;
 
-/** Career start — change this to adjust experience years */
-const CAREER_START = new Date("2025-01-01");
-
-const getExperienceLabel = (lang) => {
-  const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
-  const years = (Date.now() - CAREER_START.getTime()) / msPerYear;
-  const rounded = Math.max(0.5, Math.floor(years * 2) / 2);
-  return lang === "bn" ? `${rounded}+ বছর` : `${rounded}+ years`;
-};
-
 const copy = {
   en: {
     name: "Achib Hossen",
@@ -36,13 +26,8 @@ const copy = {
         <Hl>PostgreSQL</Hl>.
       </p>
     ),
-    bio: (experience) => (
+    bio: (
       <>
-        <p>
-          Over the past <Hl>{experience}</Hl>, I&apos;ve built and maintained
-          production-ready APIs, focusing on clean architecture, performance,
-          and long-term maintainability.
-        </p>
         <p>
           Currently working on a <Hl>multi-tenant SaaS</Hl> application that
           helps construction companies manage workers and expenses across
@@ -80,13 +65,8 @@ const copy = {
         বিশেষজ্ঞ।
       </p>
     ),
-    bio: (experience) => (
+    bio: (
       <>
-        <p>
-          গত <Hl>{experience}</Hl> ধরে production-ready API বানিয়েছি ও maintain
-          করেছি — clean architecture, performance এবং long-term
-          maintainability-এর উপর ফোকাস রেখে।
-        </p>
         <p>
           এখন একটি <Hl>multi-tenant SaaS</Hl> অ্যাপে কাজ করছি, যা construction
           company-দের বিভিন্ন site-এ worker ও expense ম্যানেজ করতে সাহায্য করে।
@@ -104,9 +84,9 @@ const copy = {
     freeTime: {
       before: "কোডিংয়ের বাইরে আমি ",
       read: "পড়া",
-      middle: ", জার্নাল লেখা এবং নতুন জায়গা ঘোরা — ",
+      middle: ", জার্নাল লেখা এবং ",
       bicycle: "সাইকেল",
-      after: " নিয়ে উপভোগ করি।",
+      after: " নিয়ে নতুন জায়গায় ঘুরতে পছন্দ করি।",
     },
   },
 };
@@ -129,7 +109,6 @@ const Index = () => {
   const [projects, setProjects] = useState([]);
   const [visits, setVisits] = useState(null);
   const t = copy[lang];
-  const experience = getExperienceLabel(lang);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -240,7 +219,7 @@ const Index = () => {
         <div className="divider" role="separator" />
 
         <section className="content">
-          <div className="bio">{t.bio(experience)}</div>
+          <div className="bio">{t.bio}</div>
           <p className="free-time">
             {t.freeTime.before}
             <a
