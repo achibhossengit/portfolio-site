@@ -10,38 +10,82 @@ const contributionTheme = {
   dark: ["#1a222d", "#244842", "#3a7a6e", "#5aafa0", "#7dd3c0"],
 };
 
+const Stack = ({ children }) => <span className="hl-stack">{children}</span>;
+const Key = ({ children }) => <span className="hl-key">{children}</span>;
+
 const copy = {
   en: {
     name: "Achib Hossen",
-    role: "Backend developer",
-    stack: "Python, Django, DRF, React, PostgreSQL",
-    bio: "Hi, I am glad to see you! I help build maintainable backend solutions. For the last 1.5+ years I have worked with Django, DRF, and Postgres. Before that I explored React, Node.js, and more to understand the full web development workflow. I started my journey with DSA, algorithms, and problem solving in C, C#, and Python.",
-    freeTime: {
-      before: "In free time I love to ",
-      read: "read",
-      middle: ", writing journal and explore new places with ",
-      bicycle: "bicycle",
-      after: ".",
-    },
     projectsTitle: "Projects",
     activityTitle: "GitHub",
     visitsLabel: "visits",
+    intro: (
+      <>
+        Hi, I am <span className="hl-name">Achib Hossen</span> a{" "}
+        <span className="hl-role">Backend developer</span> working with{" "}
+        <Stack>Django</Stack>, <Stack>DRF</Stack>, <Stack>Postgres</Stack>,{" "}
+        <Stack>Docker</Stack>, <Stack>React</Stack>, <Stack>Node.js</Stack> etc.
+      </>
+    ),
+    bio: (
+      <>
+        I help to build <Key>maintainable Backend solution</Key>. Last{" "}
+        <Key>1.5+ years</Key> I worked with <Stack>Django</Stack>,{" "}
+        <Stack>DRF</Stack> and <Stack>Postgres</Stack> etc. Before that I
+        explore <Stack>React</Stack>, <Stack>Node.js</Stack> etc to understand
+        the complete <Key>web development workflow</Key>. I started my journey
+        with <Key>DSA</Key>, <Key>Algorithm</Key>, <Key>Problem solving</Key>{" "}
+        with <Stack>C</Stack>, <Stack>C++</Stack>, <Stack>Python</Stack>.
+      </>
+    ),
+    freeTime: {
+      before: "In free time I love to ",
+      read: "read",
+      middle: ", ",
+      journal: "writing journal",
+      and: " and ",
+      explore: "explore new places",
+      with: " with ",
+      bicycle: "bicycle",
+      after: ".",
+    },
   },
   bn: {
     name: "আছিব হোসেন",
-    role: "ব্যাকএন্ড ডেভেলপার",
-    stack: "Python, Django, DRF, React, PostgreSQL",
-    bio: "হাই, আপনাকে দেখে ভালো লাগলো! আমি মেইনটেইনেবল ব্যাকএন্ড সলিউশন বানাতে সাহায্য করি। গত ১.৫+ বছর ধরে Django, DRF এবং Postgres নিয়ে কাজ করছি। তার আগে পুরো ওয়েব ডেভেলপমেন্ট ওয়ার্কফ্লো বোঝার জন্য React, Node.js ইত্যাদি এক্সপ্লোর করেছি। যাত্রা শুরু হয়েছিল DSA, অ্যালগরিদম এবং C, C#, Python দিয়ে প্রবলেম সলভিং দিয়ে।",
-    freeTime: {
-      before: "ফাঁকা সময়ে আমি ",
-      read: "পড়া",
-      middle: ", জার্নাল লেখা এবং ",
-      bicycle: "সাইকেল",
-      after: " নিয়ে নতুন জায়গা ঘুরতে ভালোবাসি।",
-    },
     projectsTitle: "প্রজেক্টস",
     activityTitle: "গিটহাব",
     visitsLabel: "ভিজিট",
+    intro: (
+      <>
+        হাই, আমি <span className="hl-name">আছিব হোসেন</span> — একজন{" "}
+        <span className="hl-role">Backend developer</span>. কাজ করি{" "}
+        <Stack>Django</Stack>, <Stack>DRF</Stack>, <Stack>Postgres</Stack>,{" "}
+        <Stack>Docker</Stack>, <Stack>React</Stack>, <Stack>Node.js</Stack>{" "}
+        ইত্যাদি নিয়ে।
+      </>
+    ),
+    bio: (
+      <>
+        আমি <Key>maintainable Backend solution</Key> বানাতে সাহায্য করি। গত{" "}
+        <Key>১.৫+ বছর</Key> ধরে <Stack>Django</Stack>, <Stack>DRF</Stack> এবং{" "}
+        <Stack>Postgres</Stack> নিয়ে কাজ করছি। তার আগে সম্পূর্ণ{" "}
+        <Key>web development workflow</Key> বোঝার জন্য <Stack>React</Stack>,{" "}
+        <Stack>Node.js</Stack> এক্সপ্লোর করেছি। যাত্রা শুরু{" "}
+        <Key>DSA</Key>, <Key>Algorithm</Key>, <Key>Problem solving</Key> দিয়ে —{" "}
+        <Stack>C</Stack>, <Stack>C++</Stack>, <Stack>Python</Stack> সহ।
+      </>
+    ),
+    freeTime: {
+      before: "ফাঁকা সময়ে আমি ",
+      read: "পড়া",
+      middle: ", ",
+      journal: "জার্নাল লেখা",
+      and: " এবং ",
+      explore: "নতুন জায়গা ঘোরা",
+      with: " — ",
+      bicycle: "সাইকেল",
+      after: " নিয়ে।",
+    },
   },
 };
 
@@ -145,16 +189,13 @@ const Index = () => {
         </header>
 
         <section className="profile">
+          <h1 className="sr-only">{t.name}</h1>
           <img
             src={profileImage}
             alt={t.name}
             className="avatar"
           />
-          <div className="identity">
-            <h1>{t.name}</h1>
-            <p className="role">{t.role}</p>
-            <p className="tech-stack">{t.stack}</p>
-          </div>
+          <p className="intro">{t.intro}</p>
         </section>
 
         <div className="divider" role="separator" />
@@ -172,6 +213,10 @@ const Index = () => {
               {t.freeTime.read}
             </a>
             {t.freeTime.middle}
+            <span className="hl-key">{t.freeTime.journal}</span>
+            {t.freeTime.and}
+            <span className="hl-key">{t.freeTime.explore}</span>
+            {t.freeTime.with}
             <a
               className="tag"
               href="https://www.strava.com/athletes/164300382"
