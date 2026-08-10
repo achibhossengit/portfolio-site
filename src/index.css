@@ -283,6 +283,30 @@ a.tag:hover {
   line-height: 1.5;
 }
 
+.activity {
+  padding: 0 0.15rem;
+  animation: rise 0.95s ease-out 0.3s both;
+}
+
+.calendar-wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.calendar-wrap .react-activity-calendar {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--muted);
+}
+
+.calendar-wrap .react-activity-calendar__legend-month,
+.calendar-wrap .react-activity-calendar__legend-colors {
+  color: var(--muted);
+}
+
 .visit-count {
   margin: 1.25rem 0 0;
   padding-top: 0.75rem;
