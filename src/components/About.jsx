@@ -11,7 +11,7 @@ const SKILLS = [
 ];
 
 const About = () => (
-  <section className="about">
+  <section className="about" id="about">
     <Divider label="About Me" />
     <div className="bio">
       <p>

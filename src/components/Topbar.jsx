@@ -1,5 +1,11 @@
 import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 
+const NAV_LINKS = [
+  { index: "01", label: "About", href: "#about" },
+  { index: "02", label: "GitHub", href: "#github" },
+  { index: "03", label: "Projects", href: "#projects" },
+];
+
 const Topbar = ({ theme, onToggleTheme }) => (
   <header className="topbar">
     <div className="topbar-actions">
@@ -30,6 +36,14 @@ const Topbar = ({ theme, onToggleTheme }) => (
         {theme === "dark" ? <FaSun /> : <FaMoon />}
       </button>
     </div>
+    <nav className="topbar-nav" aria-label="Sections">
+      {NAV_LINKS.map(({ index, label, href }) => (
+        <a className="nav-link" href={href} key={href}>
+          <span className="nav-link-index">{index}.</span>
+          {label}
+        </a>
+      ))}
+    </nav>
   </header>
 );
 

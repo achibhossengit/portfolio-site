@@ -9,7 +9,7 @@ const contributionTheme = {
 };
 
 const GithubActivity = ({ theme }) => (
-  <section className="activity">
+  <section className="activity" id="github">
     <Divider label="GitHub" />
     <div className="calendar-wrap">
       <GitHubCalendar

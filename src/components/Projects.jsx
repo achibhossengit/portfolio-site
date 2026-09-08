@@ -39,7 +39,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <Divider label="Projects" />
       <ul className="project-list">
         {projects.map((project) => (
