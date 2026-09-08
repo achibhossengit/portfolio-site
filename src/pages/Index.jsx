@@ -4,7 +4,6 @@ import GithubActivity from "@/components/GithubActivity";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
 import Topbar from "@/components/Topbar";
-import Workstation from "@/components/Workstation";
 
 const Index = () => {
   const [theme, setTheme] = useState("dark");
@@ -27,7 +26,6 @@ const Index = () => {
       <div className="flex w-full max-w-[720px] flex-col overflow-x-clip">
         <Profile />
         <About />
-        <Workstation />
         <GithubActivity theme={theme} />
         <Projects />
       </div>

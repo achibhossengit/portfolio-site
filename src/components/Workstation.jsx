@@ -1,4 +1,3 @@
-import Divider from "@/components/Divider";
 import workstationImage from "@/assets/workstation.jpg";
 
 const SpecList = ({ items }) => (
@@ -17,7 +16,7 @@ const SpecList = ({ items }) => (
 
 const Workstation = () => (
   <section className="scroll-mt-20" id="workstation">
-    <Divider label="Workstation" />
+    <h3 className="mt-8 text-center text-2xl font-semibold uppercase">Workstation</h3>
     <div className="mt-3 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_19rem]">
       <figure className="order-2 mx-auto w-full max-w-[19rem] pb-2 pr-2 md:mx-0">
         <div className="relative">
@@ -34,7 +33,7 @@ const Workstation = () => (
       </figure>
       <div className="order-1 flex flex-col gap-6">
         <div>
-          <h3 className="m-0 text-base font-semibold">Primary — Desktop</h3>
+          <h4 className="m-0 text-base font-semibold">Primary — Desktop</h4>
           <SpecList
             items={[
               { label: "Processor", value: "AMD Ryzen 7 5700G" },
@@ -49,7 +48,7 @@ const Workstation = () => (
           />
         </div>
         <div>
-          <h3 className="m-0 text-base font-semibold">Secondary — Lenovo Slim 3</h3>
+          <h4 className="m-0 text-base font-semibold">Secondary — Lenovo Slim 3</h4>
           <SpecList
             items={[
               { label: "Processor", value: "Intel Core i3" },

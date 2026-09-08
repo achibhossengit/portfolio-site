@@ -1,5 +1,6 @@
 import Divider from "@/components/Divider";
 import LogoMarquee from "@/components/LogoMarquee";
+import Workstation from "@/components/Workstation";
 
 const SKILLS = [
   "Python",
@@ -45,6 +46,7 @@ const About = () => (
       ))}
     </ul>
     <LogoMarquee />
+    <Workstation />
   </section>
 );
 
