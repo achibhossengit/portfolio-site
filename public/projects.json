@@ -2,7 +2,6 @@
   {
     "title": "Site Manager",
     "description": "Employee management and cost tracking system for construction sites — attendance, expenses, daily records, and role-based access for managers and contractors.",
-    "description_bn": "কনস্ট্রাকশন সাইটের জন্য কর্মী ব্যবস্থাপনা ও খরচ ট্র্যাকিং সিস্টেম — হাজিরা, খরচ, দৈনিক রেকর্ড এবং ম্যানেজার ও ঠিকাদারদের জন্য রোল-ভিত্তিক অ্যাক্সেস।",
     "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "type": "professional",
     "status": "ongoing",
@@ -12,7 +11,6 @@
   {
     "title": "PhiMart",
     "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
-    "description_bn": "ফুল-স্ট্যাক ই-কমার্স প্ল্যাটফর্ম — প্রোডাক্ট ক্যাটালগ, কার্ট, চেকআউট ও অর্ডার ফ্লো। Django REST API-এর সাথে React ক্লায়েন্ট।",
     "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "type": "personal",
     "status": "completed",
@@ -22,7 +20,6 @@
   {
     "title": "Ecom Django Fullstack",
     "description": "Full-stack e-commerce application built with Django — product management and shopping workflow in one codebase.",
-    "description_bn": "Django দিয়ে তৈরি ফুল-স্ট্যাক ই-কমার্স অ্যাপ — একই কোডবেসে প্রোডাক্ট ম্যানেজমেন্ট ও শপিং ওয়ার্কফ্লো।",
     "techStack": ["Django", "Python", "PostgreSQL"],
     "type": "personal",
     "status": "completed",
@@ -32,7 +29,6 @@
   {
     "title": "Find Roomies",
     "description": "Roommate finder with client and server — profiles, preferences, and matching for shared accommodations.",
-    "description_bn": "রুমমেট খোঁজার অ্যাপ — ক্লায়েন্ট ও সার্ভারসহ প্রোফাইল, পছন্দ এবং শেয়ার্ড থাকার জায়গার জন্য ম্যাচিং।",
     "techStack": ["React", "Node.js", "Express.js", "MongoDB"],
     "type": "personal",
     "status": "completed",
@@ -42,7 +38,6 @@
   {
     "title": "Library Manager",
     "description": "Library management system with separate client and server for books, users, and borrowing workflows.",
-    "description_bn": "লাইব্রেরি ম্যানেজমেন্ট সিস্টেম — বই, ইউজার এবং ধার নেওয়ার ওয়ার্কফ্লোর জন্য আলাদা ক্লায়েন্ট ও সার্ভার।",
     "techStack": ["React", "Node.js", "Express.js"],
     "type": "personal",
     "status": "completed",
@@ -52,7 +47,6 @@
   {
     "title": "Event Manager",
     "description": "Event planning app with CRUD operations, categories, and user management.",
-    "description_bn": "ইভেন্ট প্ল্যানিং অ্যাপ — CRUD অপারেশন, ক্যাটাগরি এবং ইউজার ম্যানেজমেন্টসহ।",
     "techStack": ["Django", "HTML", "CSS", "JavaScript"],
     "type": "personal",
     "status": "completed",

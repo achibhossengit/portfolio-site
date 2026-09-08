@@ -13,81 +13,42 @@ const contributionTheme = {
 const Hl = ({ children }) => <span className="hl">{children}</span>;
 
 const copy = {
-  en: {
-    name: "Achib Hossen",
-    projectsTitle: "Projects",
-    activityTitle: "GitHub",
-    visitsLabel: "visits",
-    intro: (
+  name: "Achib Hossen",
+  projectsTitle: "Projects",
+  activityTitle: "GitHub",
+  visitsLabel: "visits",
+  intro: (
+    <p>
+      Hi, I&apos;m <Hl>Achib Hossen</Hl>, a <Hl>Backend Developer</Hl>{" "}
+      specializing in building scalable, maintainable, and reliable backend
+      solutions with <Hl>Django</Hl>, <Hl>Django REST Framework</Hl>, and{" "}
+      <Hl>PostgreSQL</Hl>.
+    </p>
+  ),
+  bio: (
+    <>
       <p>
-        Hi, I&apos;m <Hl>Achib Hossen</Hl>, a <Hl>Backend Developer</Hl>{" "}
-        specializing in building scalable, maintainable, and reliable backend
-        solutions with <Hl>Django</Hl>, <Hl>Django REST Framework</Hl>, and{" "}
-        <Hl>PostgreSQL</Hl>.
+        Currently working on a <Hl>multi-tenant SaaS</Hl> application that
+        helps construction companies manage workers and expenses across
+        different sites.
       </p>
-    ),
-    bio: (
-      <>
-        <p>
-          Currently working on a <Hl>multi-tenant SaaS</Hl> application that
-          helps construction companies manage workers and expenses across
-          different sites.
-        </p>
-        <p>
-          My journey into software development started with <Hl>DSA</Hl>,{" "}
-          <Hl>algorithms</Hl>, and <Hl>problem-solving</Hl>, using <Hl>C</Hl>,{" "}
-          <Hl>C++</Hl>, and <Hl>Python</Hl>. Along the way, I explored{" "}
-          <Hl>React</Hl>, <Hl>Node.js</Hl>, and other technologies to better
-          understand the complete web development workflow. Now, I&apos;m
-          primarily focused on backend development, building reliable, scalable,
-          and maintainable systems.
-        </p>
-      </>
-    ),
-    freeTime: {
-      before: "Outside of coding, I enjoy ",
-      read: "reading",
-      middle: ", writing in my journal, and exploring new places by ",
-      bicycle: "bicycle",
-      after: ".",
-    },
-  },
-  bn: {
-    name: "আছিব হোসেন",
-    projectsTitle: "প্রজেক্টস",
-    activityTitle: "গিটহাব",
-    visitsLabel: "ভিজিট",
-    intro: (
       <p>
-        হাই, আমি <Hl>আছিব হোসেন</Hl> — একজন <Hl>Backend Developer</Hl>.{" "}
-        <Hl>Django</Hl>, <Hl>Django REST Framework</Hl> এবং <Hl>PostgreSQL</Hl>{" "}
-        দিয়ে scalable, maintainable ও reliable backend solution বানাতে
-        বিশেষজ্ঞ।
+        My journey into software development started with <Hl>DSA</Hl>,{" "}
+        <Hl>algorithms</Hl>, and <Hl>problem-solving</Hl>, using <Hl>C</Hl>,{" "}
+        <Hl>C++</Hl>, and <Hl>Python</Hl>. Along the way, I explored{" "}
+        <Hl>React</Hl>, <Hl>Node.js</Hl>, and other technologies to better
+        understand the complete web development workflow. Now, I&apos;m
+        primarily focused on backend development, building reliable, scalable,
+        and maintainable systems.
       </p>
-    ),
-    bio: (
-      <>
-        <p>
-          এখন একটি <Hl>multi-tenant SaaS</Hl> অ্যাপে কাজ করছি, যা construction
-          company-দের বিভিন্ন site-এ worker ও expense ম্যানেজ করতে সাহায্য করে।
-        </p>
-        <p>
-          সফটওয়্যার ডেভেলপমেন্ট যাত্রা শুরু হয়েছিল <Hl>DSA</Hl>,{" "}
-          <Hl>algorithms</Hl> ও <Hl>problem-solving</Hl> দিয়ে — <Hl>C</Hl>,{" "}
-          <Hl>C++</Hl> এবং <Hl>Python</Hl> ব্যবহার করে। পথে <Hl>React</Hl>,{" "}
-          <Hl>Node.js</Hl>সহ আরও কিছু এক্সপ্লোর করেছি পুরো web development
-          workflow বোঝার জন্য। এখন মূল ফোকাস backend development — reliable,
-          scalable ও maintainable সিস্টেম বানানো।
-        </p>
-      </>
-    ),
-    freeTime: {
-      before: "কোডিংয়ের বাইরে আমি ",
-      read: "পড়া",
-      middle: ", জার্নাল লেখা এবং ",
-      bicycle: "সাইকেল",
-      after: " নিয়ে নতুন জায়গায় ঘুরতে পছন্দ করি।",
-    },
+    </>
+  ),
+  freeTime: {
+    before: "Outside of coding, I enjoy ",
+    read: "reading",
+    middle: ", writing in my journal, and exploring new places by ",
+    bicycle: "bicycle",
+    after: ".",
   },
 };
 
@@ -105,26 +66,18 @@ const parseVisitCount = (svgText) => {
 
 const Index = () => {
   const [theme, setTheme] = useState("dark");
-  const [lang, setLang] = useState("en");
   const [projects, setProjects] = useState([]);
   const [visits, setVisits] = useState(null);
-  const t = copy[lang];
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const savedLang = localStorage.getItem("lang");
     if (savedTheme === "light" || savedTheme === "dark") setTheme(savedTheme);
-    if (savedLang === "en" || savedLang === "bn") setLang(savedLang);
   }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
-
-  useEffect(() => {
-    localStorage.setItem("lang", lang);
-  }, [lang]);
 
   useEffect(() => {
     fetch("/projects.json")
@@ -157,7 +110,6 @@ const Index = () => {
   }, []);
 
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  const toggleLang = () => setLang((prev) => (prev === "en" ? "bn" : "en"));
 
   return (
     <main className="page">
@@ -165,7 +117,7 @@ const Index = () => {
         <header className="topbar">
           <p className="visit-count" aria-live="polite">
             {visits != null
-              ? `${visits.toLocaleString(lang === "bn" ? "bn-BD" : "en-US")} ${t.visitsLabel}`
+              ? `${visits.toLocaleString("en-US")} ${copy.visitsLabel}`
               : ""}
           </p>
           <div className="topbar-actions">
@@ -189,14 +141,6 @@ const Index = () => {
             </a>
             <button
               type="button"
-              className="lang-btn"
-              aria-label="Switch language"
-              onClick={toggleLang}
-            >
-              {lang.toUpperCase()}
-            </button>
-            <button
-              type="button"
               className="icon-btn"
               aria-label="Toggle theme"
               onClick={toggleTheme}
@@ -207,46 +151,46 @@ const Index = () => {
         </header>
 
         <section className="profile">
-          <h1 className="sr-only">{t.name}</h1>
+          <h1 className="sr-only">{copy.name}</h1>
           <img
             src={profileImage}
-            alt={t.name}
+            alt={copy.name}
             className="avatar"
           />
-          <div className="intro">{t.intro}</div>
+          <div className="intro">{copy.intro}</div>
         </section>
 
         <div className="divider" role="separator" />
 
         <section className="content">
-          <div className="bio">{t.bio}</div>
+          <div className="bio">{copy.bio}</div>
           <p className="free-time">
-            {t.freeTime.before}
+            {copy.freeTime.before}
             <a
               className="tag"
               href="https://medium.com/@achibhossen"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t.freeTime.read}
+              {copy.freeTime.read}
             </a>
-            {t.freeTime.middle}
+            {copy.freeTime.middle}
             <a
               className="tag"
               href="https://www.strava.com/athletes/164300382"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t.freeTime.bicycle}
+              {copy.freeTime.bicycle}
             </a>
-            {t.freeTime.after}
+            {copy.freeTime.after}
           </p>
         </section>
 
         <div className="divider" role="separator" />
 
         <section className="activity">
-          <h2 className="section-title">{t.activityTitle}</h2>
+          <h2 className="section-title">{copy.activityTitle}</h2>
           <div className="calendar-wrap">
             <GitHubCalendar
               username={GITHUB_USERNAME}
@@ -264,7 +208,7 @@ const Index = () => {
         <div className="divider" role="separator" />
 
         <section className="projects">
-          <h2 className="section-title">{t.projectsTitle}</h2>
+          <h2 className="section-title">{copy.projectsTitle}</h2>
           <ul className="project-list">
             {projects.map((project) => (
               <li key={project.title} className="project-item">
@@ -288,11 +232,7 @@ const Index = () => {
                     </a>
                   )}
                 </div>
-                <p className="project-desc">
-                  {lang === "bn"
-                    ? project.description_bn || project.description
-                    : project.description}
-                </p>
+                <p className="project-desc">{project.description}</p>
                 <p className="project-stack">{project.techStack.join(", ")}</p>
               </li>
             ))}
