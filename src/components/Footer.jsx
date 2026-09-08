@@ -32,7 +32,10 @@ const SocialLinks = ({ className = "" }) => (
 );
 
 const Footer = () => (
-  <footer className="mt-20 pb-8 text-center font-mono text-xs text-base-content/60 md:mt-24">
+  <footer
+    className="mt-20 scroll-mt-20 pb-8 text-center font-mono text-xs text-base-content/60 md:mt-24"
+    id="contact"
+  >
     <aside className="fixed bottom-0 left-6 z-40 hidden flex-col items-center gap-5 lg:flex">
       <SocialLinks className="flex flex-col items-center gap-5" />
       <span

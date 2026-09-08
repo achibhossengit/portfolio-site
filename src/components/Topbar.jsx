@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { FaSun, FaMoon, FaHome } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
+import logo from "@/assets/logo.png";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#intro" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => {
@@ -19,10 +20,14 @@ const Topbar = ({ theme, onToggleTheme }) => {
     const onScroll = () => {
       const y = window.scrollY;
       const goingDown = y > lastY.current;
-      const currentSection = NAV_LINKS.reduce((active, { href }) => {
+      let currentSection = NAV_LINKS.reduce((active, { href }) => {
         const section = document.querySelector(href);
         return section?.getBoundingClientRect().top <= 120 ? href.slice(1) : active;
       }, "");
+
+      if (window.innerHeight + y >= document.documentElement.scrollHeight - 4) {
+        currentSection = "contact";
+      }
 
       lastY.current = y;
       setScrolled(y > 12);
@@ -46,11 +51,20 @@ const Topbar = ({ theme, onToggleTheme }) => {
       <div className="mx-auto flex min-h-12 w-full max-w-[800px] flex-wrap items-center justify-between px-2">
         <div className="flex gap-1">
           <a
-            className="btn btn-ghost btn-square btn-sm opacity-80 transition duration-200 ease-portfolio hover:-translate-y-[3px] hover:text-primary motion-reduce:transform-none"
+            className="group/logo btn btn-ghost btn-square btn-sm relative overflow-hidden text-primary transition duration-200 ease-portfolio hover:-translate-y-[3px] motion-reduce:transform-none"
             href="#intro"
             aria-label="Home"
           >
-            <FaHome className="text-lg" />
+            <span
+              className="pointer-events-none absolute inset-y-1 left-0 w-full animate-logo-shine bg-gradient-to-tr from-transparent via-primary to-transparent opacity-30 motion-reduce:hidden"
+              aria-hidden="true"
+            />
+            <img
+              className="relative z-10 size-7 object-contain"
+              src={logo}
+              alt=""
+              aria-hidden="true"
+            />
           </a>
           <button
             type="button"

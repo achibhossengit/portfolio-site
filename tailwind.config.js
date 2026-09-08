@@ -19,10 +19,15 @@ export default {
           from: { opacity: "0", transform: "translateY(14px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        logoShine: {
+          "0%, 52%": { transform: "translateX(-180%)" },
+          "88%, 100%": { transform: "translateX(180%)" },
+        },
       },
       animation: {
         marquee: "marquee 36s linear infinite",
         "fade-up": "fadeUp 500ms cubic-bezier(0.645, 0.045, 0.355, 1) both",
+        "logo-shine": "logoShine 5s ease infinite",
       },
       transitionTimingFunction: {
         portfolio: "cubic-bezier(0.645, 0.045, 0.355, 1)",
