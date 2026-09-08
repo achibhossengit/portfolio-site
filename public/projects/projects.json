@@ -1,7 +1,7 @@
 [
   {
     "title": "Site Manager",
-    "image": "https://img.magnific.com/free-photo/website-development_53876-95315.jpg?semt=ais_hybrid&w=740&q=80",
+    "image": "/projects/images/site-manager.png",
     "description": "Employee management and cost tracking system for construction sites — attendance, expenses, daily records, and role-based access for managers and contractors.",
     "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "is_featured": true,

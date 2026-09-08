@@ -1,5 +1,3 @@
-import profileImage from "@/assets/hero-image.jpg";
-
 const NAME = "Achib Hossen";
 
 const Profile = () => (
@@ -11,7 +9,7 @@ const Profile = () => (
       />
       <div className="relative h-full overflow-hidden rounded-sm border border-base-content/40 transition duration-300 ease-portfolio group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:shadow-lift motion-reduce:transform-none">
         <img
-          src={profileImage}
+          src="/profile/images/hero-image.jpg"
           alt={NAME}
           className="block h-full w-full object-cover object-[center_18%] saturate-[.72] transition duration-300 ease-portfolio group-hover:saturate-100"
         />

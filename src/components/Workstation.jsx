@@ -1,5 +1,3 @@
-import workstationImage from "@/assets/workstation.jpg";
-
 const SpecList = ({ items }) => (
   <ul className="m-0 mt-2 flex list-none flex-col gap-1.5 p-0 font-mono text-sm leading-relaxed">
     {items.map(({ label, value }) => (
@@ -27,7 +25,7 @@ const Workstation = () => (
             aria-hidden="true"
           />
           <img
-            src={workstationImage}
+            src="/workstation/images/workstation.jpg"
             alt="Desktop workstation with dual monitors"
             className="relative aspect-[19/10] w-full rounded-md border border-base-content/20 object-cover saturate-[.72] transition duration-300 ease-portfolio group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:saturate-100 group-hover:shadow-lift motion-reduce:transform-none"
           />

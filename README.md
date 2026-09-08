@@ -1,4 +1,4 @@
-![Achib Hossen logo](./src/assets/logo.png)
+![Achib Hossen logo](./public/branding/images/logo.png)
 
 # Achib Hossen
 

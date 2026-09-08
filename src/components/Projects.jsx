@@ -223,7 +223,7 @@ const Projects = ({ theme }) => {
   const [showAllNoteworthy, setShowAllNoteworthy] = useState(false);
 
   useEffect(() => {
-    fetch("/projects.json")
+    fetch("/projects/projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch(() => setProjects([]));

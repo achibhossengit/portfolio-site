@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
-import logo from "@/assets/logo.png";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -61,7 +60,7 @@ const Topbar = ({ theme, onToggleTheme }) => {
             />
             <img
               className="relative z-10 size-7 object-contain"
-              src={logo}
+              src="/branding/images/logo.png"
               alt=""
               aria-hidden="true"
             />
