@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { index: "01", label: "About", href: "#about" },
   { index: "02", label: "GitHub", href: "#github" },
   { index: "03", label: "Projects", href: "#projects" },
+  { index: "04", label: "Setup", href: "#workstation" },
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => {
@@ -31,8 +32,8 @@ const Topbar = ({ theme, onToggleTheme }) => {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="navbar mx-auto min-h-10 w-full max-w-[720px]">
-        <div className="navbar-start gap-1">
+      <div className="mx-auto flex min-h-10 w-full max-w-[720px] flex-wrap items-center justify-between px-2">
+        <div className="flex gap-1">
           <a
             className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
             href="#intro"
@@ -67,7 +68,7 @@ const Topbar = ({ theme, onToggleTheme }) => {
             {theme === "dark" ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
           </button>
         </div>
-        <nav className="navbar-end flex-wrap gap-x-4 gap-y-2" aria-label="Sections">
+        <nav className="flex shrink-0 gap-x-3 sm:gap-x-4" aria-label="Sections">
           {NAV_LINKS.map(({ index, label, href }) => (
             <a
               className="font-mono text-sm whitespace-nowrap hover:text-primary"

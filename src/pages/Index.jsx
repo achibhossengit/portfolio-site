@@ -4,6 +4,7 @@ import GithubActivity from "@/components/GithubActivity";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
 import Topbar from "@/components/Topbar";
+import Workstation from "@/components/Workstation";
 
 const Index = () => {
   const [theme, setTheme] = useState("dark");
@@ -28,6 +29,7 @@ const Index = () => {
         <About />
         <GithubActivity theme={theme} />
         <Projects />
+        <Workstation />
       </div>
     </main>
   );
