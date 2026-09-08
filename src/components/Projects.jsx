@@ -1,34 +1,93 @@
 import { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 import Divider from "@/components/Divider";
 
-const ProjectItem = ({ project }) => (
-  <li>
-    <div className="mb-1 flex items-baseline gap-3">
-      <a
-        className="text-base font-semibold no-underline hover:text-primary"
-        href={project.live_link || project.repo_link}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {project.title}
-      </a>
-      {project.repo_link && (
-        <a
-          className="link link-hover font-mono text-xs text-primary"
-          href={project.repo_link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          code
-        </a>
-      )}
+const ProjectPreview = ({ project }) => (
+  <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-base-content/15 bg-base-200">
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-primary/15 to-transparent" />
+    <div className="absolute -right-10 -top-10 size-40 rounded-full border-[24px] border-primary/15" />
+    <div className="absolute bottom-5 left-5 right-5">
+      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-primary">
+        {project.type} project
+      </p>
+      <p className="m-0 text-2xl font-semibold text-base-content">{project.title}</p>
     </div>
-    <p className="mb-0.5 text-[0.95rem] leading-snug">{project.description}</p>
-    <p className="m-0 font-mono text-sm text-base-content/60">
-      {project.techStack.join(", ")}
-    </p>
-  </li>
+  </div>
 );
+
+const ProjectItem = ({ project, index }) => {
+  const reversed = index % 2 === 1;
+
+  return (
+    <li className="relative grid md:min-h-[19rem] md:grid-cols-12 md:items-center">
+      <div
+        className={`md:col-span-7 md:row-start-1 ${
+          reversed ? "md:col-start-6" : "md:col-start-1"
+        }`}
+      >
+        <ProjectPreview project={project} />
+      </div>
+      <div
+        className={`z-10 mt-4 md:mt-0 md:col-span-7 md:row-start-1 ${
+          reversed
+            ? "md:col-start-1 md:text-left"
+            : "md:col-start-6 md:text-right"
+        }`}
+      >
+        <p className="mb-1 font-mono text-xs text-primary">Featured Project</p>
+        <h3 className="mb-3 text-xl font-semibold">
+          {project.title}
+        </h3>
+        <div className="rounded-md bg-base-200 p-5 shadow-lg">
+          <p className="m-0 text-[0.95rem] leading-relaxed text-base-content/75">
+            {project.description}
+          </p>
+        </div>
+        <ul
+          className={`my-4 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 font-mono text-xs text-base-content/60 ${
+            reversed ? "md:justify-start" : "md:justify-end"
+          }`}
+          aria-label={`${project.title} technologies`}
+        >
+          {project.techStack.map((technology) => (
+            <li key={technology}>{technology}</li>
+          ))}
+        </ul>
+        <div
+          className={`flex items-center gap-3 ${
+            reversed ? "md:justify-start" : "md:justify-end"
+          }`}
+        >
+          {project.repo_link && (
+            <a
+              className="text-xl transition-colors hover:text-primary"
+              href={project.repo_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} source code`}
+              title="Source code"
+            >
+              <FaGithub />
+            </a>
+          )}
+          {project.live_link && project.live_link !== project.repo_link && (
+            <a
+              className="text-xl transition-colors hover:text-primary"
+              href={project.live_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${project.title}`}
+              title="Open project"
+            >
+              <FiExternalLink />
+            </a>
+          )}
+        </div>
+      </div>
+    </li>
+  );
+};
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -43,9 +102,9 @@ const Projects = () => {
   return (
     <section className="scroll-mt-20" id="projects">
       <Divider label="Projects" />
-      <ul className="mb-0 ml-0 mr-0 mt-3 flex list-none flex-col gap-3.5 p-0">
-        {projects.map((project) => (
-          <ProjectItem key={project.title} project={project} />
+      <ul className="mb-0 ml-0 mr-0 mt-6 flex list-none flex-col gap-16 p-0 md:gap-20">
+        {projects.map((project, index) => (
+          <ProjectItem key={project.title} project={project} index={index} />
         ))}
       </ul>
     </section>
