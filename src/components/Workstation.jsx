@@ -18,7 +18,7 @@ const SpecList = ({ items }) => (
 const Workstation = () => (
   <section className="scroll-mt-20" id="workstation">
     <Divider label="Workstation" />
-    <figure className="w-full max-w-sm pb-2 pr-2">
+    <figure className="mt-3 w-full max-w-sm pb-2 pr-2">
       <div className="relative">
         <div
           className="pointer-events-none absolute inset-0 translate-x-2 translate-y-2 rounded-md border border-primary"

@@ -43,7 +43,7 @@ const Projects = () => {
   return (
     <section className="scroll-mt-20" id="projects">
       <Divider label="Projects" />
-      <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
+      <ul className="mb-0 ml-0 mr-0 mt-3 flex list-none flex-col gap-3.5 p-0">
         {projects.map((project) => (
           <ProjectItem key={project.title} project={project} />
         ))}
