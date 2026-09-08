@@ -11,7 +11,7 @@ const SKILLS = [
 ];
 
 const About = () => (
-  <section className="flex scroll-mt-4 flex-col gap-3" id="about">
+  <section className="flex scroll-mt-20 flex-col gap-3" id="about">
     <Divider label="About Me" />
     <div className="flex flex-col gap-3 text-base leading-relaxed">
       <p>

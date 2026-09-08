@@ -41,7 +41,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="scroll-mt-4" id="projects">
+    <section className="scroll-mt-20" id="projects">
       <Divider label="Projects" />
       <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
         {projects.map((project) => (

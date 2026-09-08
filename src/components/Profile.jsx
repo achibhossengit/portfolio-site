@@ -3,7 +3,7 @@ import profileImage from "@/assets/hero-image.jpg";
 const NAME = "Achib Hossen";
 
 const Profile = () => (
-  <section className="flex w-full items-stretch gap-5 max-[400px]:flex-col max-[400px]:items-start">
+  <section className="flex w-full scroll-mt-20 items-stretch gap-5 max-[400px]:flex-col max-[400px]:items-start" id="intro">
     <div className="w-[148px] shrink-0 self-stretch max-sm:w-28 max-[400px]:h-44 max-[400px]:w-36">
       <img
         src={profileImage}

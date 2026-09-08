@@ -9,7 +9,7 @@ const contributionTheme = {
 };
 
 const GithubActivity = ({ theme }) => (
-  <section className="scroll-mt-4" id="github">
+  <section className="scroll-mt-20" id="github">
     <Divider label="GitHub" />
     <div className="w-full overflow-x-auto pb-1 font-mono text-base-content/60 [&_.react-activity-calendar]:mx-auto [&_.react-activity-calendar]:w-max [&_.react-activity-calendar]:max-w-full">
       <GitHubCalendar
