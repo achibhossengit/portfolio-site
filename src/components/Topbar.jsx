@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FaGithub, FaLinkedin, FaSun, FaMoon, FaHome } from "react-icons/fa";
+import { FaSun, FaMoon, FaHome } from "react-icons/fa";
 
 const NAV_LINKS = [
   { index: "01", label: "About", href: "#about" },
@@ -31,7 +31,7 @@ const Topbar = ({ theme, onToggleTheme }) => {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="mx-auto flex min-h-10 w-full max-w-[720px] flex-wrap items-center justify-between px-2">
+      <div className="mx-auto flex min-h-10 w-full max-w-[800px] flex-wrap items-center justify-between px-2">
         <div className="flex gap-1">
           <a
             className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
@@ -39,24 +39,6 @@ const Topbar = ({ theme, onToggleTheme }) => {
             aria-label="Home"
           >
             <FaHome className="text-lg" />
-          </a>
-          <a
-            className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
-            href="https://github.com/achibhossengit"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub className="text-lg" />
-          </a>
-          <a
-            className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
-            href="https://www.linkedin.com/in/achibhossen/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin className="text-lg" />
           </a>
           <button
             type="button"
