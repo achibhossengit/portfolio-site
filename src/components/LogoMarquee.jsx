@@ -23,11 +23,18 @@ const LogoMarquee = () => {
   const loop = [...LOGOS, ...LOGOS];
 
   return (
-    <div className="logo-marquee" aria-label="Technologies">
-      <div className="logo-marquee-track">
+    <div
+      className="overflow-hidden border-y border-base-content/25 py-3 hover:[&_.marquee-track]:[animation-play-state:paused]"
+      aria-label="Technologies"
+    >
+      <div className="marquee-track flex w-max items-center gap-7 animate-marquee motion-reduce:animate-none">
         {loop.map(({ name, Icon }, index) => (
-          <span className="logo-marquee-item" key={`${name}-${index}`} title={name}>
-            <Icon aria-hidden="true" />
+          <span
+            className="inline-flex items-center gap-2 whitespace-nowrap font-mono text-xs text-base-content/70"
+            key={`${name}-${index}`}
+            title={name}
+          >
+            <Icon className="size-4 shrink-0" aria-hidden="true" />
             <span>{name}</span>
           </span>
         ))}

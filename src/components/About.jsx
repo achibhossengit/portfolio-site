@@ -11,9 +11,9 @@ const SKILLS = [
 ];
 
 const About = () => (
-  <section className="about" id="about">
+  <section className="flex scroll-mt-4 flex-col gap-3" id="about">
     <Divider label="About Me" />
-    <div className="bio">
+    <div className="flex flex-col gap-3 text-base leading-relaxed">
       <p>
         I started programming by writing code, but over time I became more
         interested in what happens behind it — how applications are structured,
@@ -34,10 +34,13 @@ const About = () => (
         design and ship software.
       </p>
     </div>
-    <ul className="skills">
+    <ul className="m-0 grid list-none grid-cols-2 gap-x-6 gap-y-1.5 p-0 font-mono text-sm">
       {SKILLS.map((skill) => (
         <li key={skill}>
-          <span aria-hidden="true">&gt;</span> {skill}
+          <span className="mr-1.5 text-primary" aria-hidden="true">
+            &gt;
+          </span>
+          {skill}
         </li>
       ))}
     </ul>

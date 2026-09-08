@@ -7,39 +7,43 @@ const NAV_LINKS = [
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => (
-  <header className="topbar">
-    <div className="topbar-actions">
+  <header className="navbar min-h-8 px-0 mb-3">
+    <div className="navbar-start gap-1">
       <a
-        className="icon-btn"
+        className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
         href="https://github.com/achibhossengit"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
       >
-        <FaGithub />
+        <FaGithub className="text-lg" />
       </a>
       <a
-        className="icon-btn"
+        className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
         href="https://www.linkedin.com/in/achibhossen/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
       >
-        <FaLinkedin />
+        <FaLinkedin className="text-lg" />
       </a>
       <button
         type="button"
-        className="icon-btn"
+        className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
         aria-label="Toggle theme"
         onClick={onToggleTheme}
       >
-        {theme === "dark" ? <FaSun /> : <FaMoon />}
+        {theme === "dark" ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
       </button>
     </div>
-    <nav className="topbar-nav" aria-label="Sections">
+    <nav className="navbar-end flex-wrap gap-x-4 gap-y-2" aria-label="Sections">
       {NAV_LINKS.map(({ index, label, href }) => (
-        <a className="nav-link" href={href} key={href}>
-          <span className="nav-link-index">{index}.</span>
+        <a
+          className="font-mono text-sm whitespace-nowrap hover:text-primary"
+          href={href}
+          key={href}
+        >
+          <span className="text-primary mr-1">{index}.</span>
           {label}
         </a>
       ))}

@@ -1,112 +1,65 @@
 export default {
-	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{js,jsx}",
-		"./components/**/*.{js,jsx}",
-		"./app/**/*.{js,jsx}",
-		"./src/**/*.{js,jsx}",
-	],
-	prefix: "",
-	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
-		extend: {
-			fontFamily: {
-				sans: ['Instrument Sans', 'sans-serif'],
-				mono: ['IBM Plex Mono', 'monospace'],
-			},
-			colors: {
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				surface: {
-					DEFAULT: 'hsl(var(--surface))',
-					hover: 'hsl(var(--surface-hover))',
-				},
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))',
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))',
-					hover: 'hsl(var(--secondary-hover))',
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))',
-					hover: 'hsl(var(--accent-hover))',
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					foreground: 'hsl(var(--warning-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))',
-					border: 'hsl(var(--card-border))',
-				}
-			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-surface': 'var(--gradient-surface)',
-				'gradient-accent': 'var(--gradient-accent)',
-				'gradient-hero': 'var(--gradient-hero)',
-			},
-			boxShadow: {
-				'soft': 'var(--shadow-soft)',
-				'medium': 'var(--shadow-medium)',
-				'hard': 'var(--shadow-hard)',
-				'glow': 'var(--shadow-glow)',
-			},
-			transitionProperty: {
-				'fast': 'var(--transition-fast)',
-				'smooth': 'var(--transition-smooth)',
-				'slow': 'var(--transition-slow)',
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			},
-			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
-			},
-			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
-		}
-	},
-	plugins: [require("tailwindcss-animate"), require("daisyui")],
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Instrument Sans", "sans-serif"],
+        mono: ["IBM Plex Mono", "monospace"],
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 28s linear infinite",
+      },
+    },
+  },
+  plugins: [
+    require("tailwindcss-animate"),
+    require("daisyui"),
+    ({ addBase }) => {
+      addBase({
+        html: { scrollBehavior: "smooth" },
+        body: { minHeight: "100vh" },
+        "#root": { minHeight: "100vh" },
+        '[data-theme="dark"]': {
+          "color-scheme": "dark",
+          "--color-base-100": "#0c0f14",
+          "--color-base-200": "#12171f",
+          "--color-base-300": "#1a222d",
+          "--color-base-content": "#c5cdd8",
+          "--color-primary": "#7dd3c0",
+          "--color-primary-content": "#0c0f14",
+          "--color-accent": "#7dd3c0",
+          "--color-accent-content": "#0c0f14",
+          "--color-neutral": "#9aa3b2",
+          "--color-neutral-content": "#0c0f14",
+        },
+        '[data-theme="light"]': {
+          "color-scheme": "light",
+          "--color-base-100": "#fdf6e3",
+          "--color-base-200": "#eee8d5",
+          "--color-base-300": "#d6cfc0",
+          "--color-base-content": "#586e75",
+          "--color-primary": "#2aa198",
+          "--color-primary-content": "#fdf6e3",
+          "--color-accent": "#2aa198",
+          "--color-accent-content": "#fdf6e3",
+          "--color-neutral": "#657b83",
+          "--color-neutral-content": "#fdf6e3",
+        },
+      });
+    },
+  ],
+  daisyui: {
+    themes: ["dark --prefersdark", "light --default"],
+    logs: false,
+  },
 };
