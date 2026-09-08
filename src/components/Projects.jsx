@@ -5,14 +5,22 @@ import Divider from "@/components/Divider";
 
 const ProjectPreview = ({ project }) => (
   <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-base-content/15 bg-base-200">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-primary/15 to-transparent" />
-    <div className="absolute -right-10 -top-10 size-40 rounded-full border-[24px] border-primary/15" />
-    <div className="absolute bottom-5 left-5 right-5">
-      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-primary">
-        {project.type} project
-      </p>
-      <p className="m-0 text-2xl font-semibold text-base-content">{project.title}</p>
-    </div>
+    {project.image ? (
+      <img
+        src={project.image}
+        alt={`${project.title} preview`}
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    ) : (
+      <>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/35 via-primary/15 to-transparent" />
+        <div className="absolute -right-10 -top-10 size-40 rounded-full border-[24px] border-primary/15" />
+        <div className="absolute bottom-5 left-5 right-5">
+          <p className="m-0 text-2xl font-semibold text-base-content">{project.title}</p>
+        </div>
+      </>
+    )}
   </div>
 );
 

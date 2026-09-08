@@ -1,60 +1,60 @@
 [
   {
     "title": "Site Manager",
+    "image": null,
     "description": "Employee management and cost tracking system for construction sites — attendance, expenses, daily records, and role-based access for managers and contractors.",
     "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "is_featured": true,
-    "type": "professional",
     "status": "ongoing",
     "repo_link": "https://github.com/achibhossengit/site-manager-api",
     "live_link": "https://github.com/achibhossengit/site-manager-client"
   },
   {
     "title": "PhiMart",
+    "image": null,
     "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
     "techStack": ["Django", "DRF", "React", "PostgreSQL"],
     "is_featured": true,
-    "type": "personal",
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Phimart-client",
     "live_link": "https://phimart-client-ruddy.vercel.app"
   },
   {
     "title": "Ecom Django Fullstack",
+    "image": null,
     "description": "Full-stack e-commerce application built with Django — product management and shopping workflow in one codebase.",
     "techStack": ["Django", "Python", "PostgreSQL"],
     "is_featured": false,
-    "type": "personal",
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/ecom-django-fullstack",
     "live_link": "https://github.com/achibhossengit/ecom-django-fullstack"
   },
   {
     "title": "Find Roomies",
+    "image": null,
     "description": "Roommate finder with client and server — profiles, preferences, and matching for shared accommodations.",
     "techStack": ["React", "Node.js", "Express.js", "MongoDB"],
     "is_featured": false,
-    "type": "personal",
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Find-Roomies-Server",
     "live_link": "https://github.com/achibhossengit/Find-Roomies-Client"
   },
   {
     "title": "Library Manager",
+    "image": null,
     "description": "Library management system with separate client and server for books, users, and borrowing workflows.",
     "techStack": ["React", "Node.js", "Express.js"],
     "is_featured": false,
-    "type": "personal",
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Library-Manager-Server",
     "live_link": "https://github.com/achibhossengit/Library-Manager-Client"
   },
   {
     "title": "Event Manager",
+    "image": null,
     "description": "Event planning app with CRUD operations, categories, and user management.",
     "techStack": ["Django", "HTML", "CSS", "JavaScript"],
     "is_featured": false,
-    "type": "personal",
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Event-Manager",
     "live_link": "https://github.com/achibhossengit/Event-Manager"
