@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import About from "@/components/About";
-import Divider from "@/components/Divider";
 import GithubActivity from "@/components/GithubActivity";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
@@ -26,11 +25,8 @@ const Index = () => {
       <div className="frame">
         <Topbar theme={theme} onToggleTheme={toggleTheme} />
         <Profile />
-        <Divider />
         <About />
-        <Divider />
         <GithubActivity theme={theme} />
-        <Divider />
         <Projects />
       </div>
     </main>

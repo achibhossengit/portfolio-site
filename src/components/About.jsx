@@ -1,44 +1,47 @@
-import Hl from "@/components/Hl";
+import Divider from "@/components/Divider";
+import LogoMarquee from "@/components/LogoMarquee";
+
+const SKILLS = [
+  "Python",
+  "Javascript",
+  "Django",
+  "React.js",
+  "Django Rest Framework",
+  "Express.js",
+];
 
 const About = () => (
-  <section className="content">
+  <section className="about">
+    <Divider label="About Me" />
     <div className="bio">
       <p>
-        Currently working on a <Hl>multi-tenant SaaS</Hl> application that
-        helps construction companies manage workers and expenses across
-        different sites.
+        I started programming by writing code, but over time I became more
+        interested in what happens behind it — how applications are structured,
+        how data flows through a system, and what makes software reliable in the
+        real world.
       </p>
       <p>
-        My journey into software development started with <Hl>DSA</Hl>,{" "}
-        <Hl>algorithms</Hl>, and <Hl>problem-solving</Hl>, using <Hl>C</Hl>,{" "}
-        <Hl>C++</Hl>, and <Hl>Python</Hl>. Along the way, I explored{" "}
-        <Hl>React</Hl>, <Hl>Node.js</Hl>, and other technologies to better
-        understand the complete web development workflow. Now, I&apos;m
-        primarily focused on backend development, building reliable, scalable,
-        and maintainable systems.
+        I&apos;m a Backend / Full-Stack Developer focused on building practical,
+        production-ready applications. I enjoy designing APIs, databases,
+        authentication, and business logic, while also working across the
+        frontend and deployment side when needed.
+      </p>
+      <p>
+        I don&apos;t define myself by a fixed list of technologies. I believe
+        good developers should be able to learn, adapt, and choose the right
+        tools for the problem. Most of what I learn comes from building real
+        projects, solving real problems, and continuously improving the way I
+        design and ship software.
       </p>
     </div>
-    <p className="free-time">
-      Outside of coding, I enjoy{" "}
-      <a
-        className="tag"
-        href="https://medium.com/@achibhossen"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        reading
-      </a>
-      , writing in my journal, and exploring new places by{" "}
-      <a
-        className="tag"
-        href="https://www.strava.com/athletes/164300382"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        bicycle
-      </a>
-      .
-    </p>
+    <ul className="skills">
+      {SKILLS.map((skill) => (
+        <li key={skill}>
+          <span aria-hidden="true">&gt;</span> {skill}
+        </li>
+      ))}
+    </ul>
+    <LogoMarquee />
   </section>
 );
 

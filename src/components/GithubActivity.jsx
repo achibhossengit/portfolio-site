@@ -1,4 +1,5 @@
 import { GitHubCalendar } from "react-github-calendar";
+import Divider from "@/components/Divider";
 
 const GITHUB_USERNAME = "achibhossengit";
 
@@ -9,7 +10,7 @@ const contributionTheme = {
 
 const GithubActivity = ({ theme }) => (
   <section className="activity">
-    <h2 className="section-title">GitHub</h2>
+    <Divider label="GitHub" />
     <div className="calendar-wrap">
       <GitHubCalendar
         username={GITHUB_USERNAME}

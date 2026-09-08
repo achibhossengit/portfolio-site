@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Divider from "@/components/Divider";
 
 const ProjectItem = ({ project }) => (
   <li className="project-item">
@@ -39,7 +40,7 @@ const Projects = () => {
 
   return (
     <section className="projects">
-      <h2 className="section-title">Projects</h2>
+      <Divider label="Projects" />
       <ul className="project-list">
         {projects.map((project) => (
           <ProjectItem key={project.title} project={project} />

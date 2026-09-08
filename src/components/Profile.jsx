@@ -1,19 +1,24 @@
 import profileImage from "@/assets/hero-image.jpg";
-import Hl from "@/components/Hl";
 
 const NAME = "Achib Hossen";
 
 const Profile = () => (
   <section className="profile">
-    <h1 className="sr-only">{NAME}</h1>
     <img src={profileImage} alt={NAME} className="avatar" />
     <div className="intro">
+      <h1 className="profile-name">{NAME}</h1>
       <p>
-        Hi, I&apos;m <Hl>Achib Hossen</Hl>, a <Hl>Backend Developer</Hl>{" "}
-        specializing in building scalable, maintainable, and reliable backend
-        solutions with <Hl>Django</Hl>, <Hl>Django REST Framework</Hl>, and{" "}
-        <Hl>PostgreSQL</Hl>.
+        I&apos;m a fullstack developer from Bangladesh experienced in building
+        scalable web applications driven forward by problem solving.
       </p>
+      <a
+        className="hire-btn"
+        href="https://www.linkedin.com/in/achibhossen/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Hire me
+      </a>
     </div>
   </section>
 );
