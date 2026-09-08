@@ -75,7 +75,7 @@ const Footer = () => (
         Developed by{" "}
         <a
           className="bg-[linear-gradient(var(--color-primary),var(--color-primary))] bg-[length:0_1px] bg-left-bottom bg-no-repeat pb-0.5 transition-[background-size,color] duration-200 ease-portfolio hover:bg-[length:100%_1px] hover:text-primary"
-          href="https://github.com/achibhossengit"
+          href="https://github.com/achibhossengit/portfolio-site"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+![Achib Hossen logo](./src/assets/logo.png)
 
-## Project info
+# Achib Hossen
 
-**URL**: https://lovable.dev/projects/6f397281-76ef-4818-bfa6-99c2c535ecd3
+The latest iteration of my personal website, built with Vite and React.
 
-## How can I edit this code?
+## ⚙️ Installation & Setup
 
-There are several ways of editing your application.
+Make sure Node.js and npm are installed on your machine.
 
-**Use Lovable**
+1. Clone the source code:
+  ```sh
+   git clone https://github.com/achibhossengit/portfolio-site.git
+   cd Portfolio-WebSite
+  ```
+2. Install the dependencies:
+  ```sh
+   npm install
+  ```
+3. Start the development server:
+  ```sh
+   npm run dev
+  ```
+   The website will be available at `http://localhost:8080`.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6f397281-76ef-4818-bfa6-99c2c535ecd3) and start prompting.
+## 🛠️ Building and Running for Production
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Generate an optimized production build locally:
+  ```sh
+   npm run build
+  ```
+   Vite generates the production files in `dist`. This directory is ignored by Git and is not pushed to GitHub.
+2. Preview the production build locally:
+  ```sh
+   npm run preview
+  ```
 
-**Use your preferred IDE**
+## 🚀 Deployment
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This website is deployed on [Netlify](https://www.netlify.com/) directly from the GitHub repository.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Netlify uses the following build configuration:
 
-Follow these steps:
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+When changes are pushed to the configured production branch, Netlify installs the dependencies, builds the project, and deploys the generated `dist` directory automatically. The build output does not need to be committed to GitHub.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 💻 Technologies
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- Vite
 - Tailwind CSS
+- DaisyUI
+- React Icons
+- React GitHub Calendar
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6f397281-76ef-4818-bfa6-99c2c535ecd3) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
