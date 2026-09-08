@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import Divider from "@/components/Divider";
+import GithubActivity from "@/components/GithubActivity";
 
 const ProjectPreview = ({ project }) => (
   <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-base-content/15 bg-base-200">
@@ -173,7 +174,7 @@ const NoteworthyProject = ({ project }) => (
   </li>
 );
 
-const Projects = () => {
+const Projects = ({ theme }) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -209,6 +210,7 @@ const Projects = () => {
           </ul>
         </section>
       )}
+      <GithubActivity theme={theme} />
     </section>
   );
 };

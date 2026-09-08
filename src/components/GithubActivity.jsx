@@ -1,5 +1,4 @@
 import { GitHubCalendar } from "react-github-calendar";
-import Divider from "@/components/Divider";
 
 const GITHUB_USERNAME = "achibhossengit";
 
@@ -9,8 +8,17 @@ const contributionTheme = {
 };
 
 const GithubActivity = ({ theme }) => (
-  <section className="scroll-mt-20" id="github">
-    <Divider label="GitHub" />
+  <section
+    className="scroll-mt-20"
+    id="github"
+    aria-labelledby="github-contributions-title"
+  >
+    <h3
+      className="mb-6 mt-16 text-center text-xl font-semibold"
+      id="github-contributions-title"
+    >
+      GitHub Contributions
+    </h3>
     <div className="mt-3 w-full overflow-x-auto pb-1 font-mono text-base-content/60 [&_.react-activity-calendar]:mx-auto [&_.react-activity-calendar]:w-max [&_.react-activity-calendar]:max-w-full">
       <GitHubCalendar
         username={GITHUB_USERNAME}

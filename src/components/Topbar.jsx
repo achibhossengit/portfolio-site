@@ -3,8 +3,7 @@ import { FaSun, FaMoon, FaHome } from "react-icons/fa";
 
 const NAV_LINKS = [
   { index: "01", label: "About", href: "#about" },
-  { index: "02", label: "GitHub", href: "#github" },
-  { index: "03", label: "Projects", href: "#projects" },
+  { index: "02", label: "Projects", href: "#projects" },
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => {

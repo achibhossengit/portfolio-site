@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
-import GithubActivity from "@/components/GithubActivity";
 import Profile from "@/components/Profile";
 import Projects from "@/components/Projects";
 import Topbar from "@/components/Topbar";
@@ -27,8 +26,7 @@ const Index = () => {
       <div className="flex w-full max-w-[800px] flex-col overflow-x-clip">
         <Profile />
         <About />
-        <GithubActivity theme={theme} />
-        <Projects />
+        <Projects theme={theme} />
         <Footer />
       </div>
     </main>
