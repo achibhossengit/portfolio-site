@@ -89,6 +89,51 @@ const ProjectItem = ({ project, index }) => {
   );
 };
 
+const NoteworthyProject = ({ project }) => (
+  <li className="group flex h-full flex-col rounded-md bg-base-200 p-5 transition duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <div className="mb-4 flex items-center justify-end gap-3">
+      {project.repo_link && (
+        <a
+          className="text-lg transition-colors hover:text-primary"
+          href={project.repo_link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${project.title} source code`}
+          title="Source code"
+        >
+          <FaGithub />
+        </a>
+      )}
+      {project.live_link && project.live_link !== project.repo_link && (
+        <a
+          className="text-lg transition-colors hover:text-primary"
+          href={project.live_link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${project.title}`}
+          title="Open project"
+        >
+          <FiExternalLink />
+        </a>
+      )}
+    </div>
+    <h4 className="mb-2 text-lg font-semibold transition-colors group-hover:text-primary">
+      {project.title}
+    </h4>
+    <p className="mb-5 flex-1 text-sm leading-relaxed text-base-content/70">
+      {project.description}
+    </p>
+    <ul
+      className="m-0 flex list-none flex-wrap gap-x-3 gap-y-1 p-0 font-mono text-xs text-base-content/55"
+      aria-label={`${project.title} technologies`}
+    >
+      {project.techStack.map((technology) => (
+        <li key={technology}>{technology}</li>
+      ))}
+    </ul>
+  </li>
+);
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
@@ -99,14 +144,32 @@ const Projects = () => {
       .catch(() => setProjects([]));
   }, []);
 
+  const featuredProjects = projects.filter((project) => project.is_featured);
+  const noteworthyProjects = projects.filter((project) => !project.is_featured);
+
   return (
     <section className="scroll-mt-20" id="projects">
       <Divider label="Projects" />
       <ul className="mb-0 ml-0 mr-0 mt-6 flex list-none flex-col gap-16 p-0 md:gap-20">
-        {projects.map((project, index) => (
+        {featuredProjects.map((project, index) => (
           <ProjectItem key={project.title} project={project} index={index} />
         ))}
       </ul>
+      {noteworthyProjects.length > 0 && (
+        <section aria-labelledby="noteworthy-projects-title">
+          <h3
+            className="mb-6 mt-16 text-center text-xl font-semibold"
+            id="noteworthy-projects-title"
+          >
+            Other Noteworthy Projects
+          </h3>
+          <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
+            {noteworthyProjects.map((project) => (
+              <NoteworthyProject key={project.title} project={project} />
+            ))}
+          </ul>
+        </section>
+      )}
     </section>
   );
 };
