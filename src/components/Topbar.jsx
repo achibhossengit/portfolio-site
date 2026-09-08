@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { FaSun, FaMoon, FaHome } from "react-icons/fa";
 
 const NAV_LINKS = [
-  { index: "01", label: "About", href: "#about" },
-  { index: "02", label: "Projects", href: "#projects" },
+  { label: "Home", href: "#intro" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => {
   const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const lastY = useRef(0);
 
   useEffect(() => {
@@ -16,24 +19,34 @@ const Topbar = ({ theme, onToggleTheme }) => {
     const onScroll = () => {
       const y = window.scrollY;
       const goingDown = y > lastY.current;
+      const currentSection = NAV_LINKS.reduce((active, { href }) => {
+        const section = document.querySelector(href);
+        return section?.getBoundingClientRect().top <= 120 ? href.slice(1) : active;
+      }, "");
+
       lastY.current = y;
-      setHidden(goingDown && y > 8);
+      setScrolled(y > 12);
+      setHidden(goingDown && y > 80);
+      setActiveSection(currentSection);
     };
 
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-base-100/95 backdrop-blur-md transition-transform duration-300 ease-out ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-portfolio ${
+        scrolled ? "bg-base-100/90 shadow-lg backdrop-blur-md" : "bg-base-100/95"
+      } ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="mx-auto flex min-h-10 w-full max-w-[800px] flex-wrap items-center justify-between px-2">
+      <div className="mx-auto flex min-h-12 w-full max-w-[800px] flex-wrap items-center justify-between px-2">
         <div className="flex gap-1">
           <a
-            className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
+            className="btn btn-ghost btn-square btn-sm opacity-80 transition duration-200 ease-portfolio hover:-translate-y-[3px] hover:text-primary motion-reduce:transform-none"
             href="#intro"
             aria-label="Home"
           >
@@ -41,7 +54,7 @@ const Topbar = ({ theme, onToggleTheme }) => {
           </a>
           <button
             type="button"
-            className="btn btn-ghost btn-square btn-sm opacity-85 hover:-translate-y-px"
+            className="btn btn-ghost btn-square btn-sm opacity-80 transition duration-200 ease-portfolio hover:-translate-y-[3px] hover:text-primary motion-reduce:transform-none"
             aria-label="Toggle theme"
             onClick={onToggleTheme}
           >
@@ -49,13 +62,16 @@ const Topbar = ({ theme, onToggleTheme }) => {
           </button>
         </div>
         <nav className="flex shrink-0 gap-x-3 sm:gap-x-4" aria-label="Sections">
-          {NAV_LINKS.map(({ index, label, href }) => (
+          {NAV_LINKS.map(({ label, href }) => (
             <a
-              className="font-mono text-sm whitespace-nowrap hover:text-primary"
+              className={`relative whitespace-nowrap py-2 font-mono text-sm text-primary transition-colors duration-200 ease-portfolio after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:bg-primary after:transition-transform after:duration-200 after:ease-portfolio hover:after:scale-x-100 focus-visible:after:scale-x-100 ${
+                activeSection === href.slice(1) ? "after:scale-x-100" : "after:scale-x-0"
+              }`}
               href={href}
               key={href}
+              aria-current={activeSection === href.slice(1) ? "location" : undefined}
+              onClick={() => setActiveSection(href.slice(1))}
             >
-              <span className="text-primary mr-1">{index}.</span>
               {label}
             </a>
           ))}

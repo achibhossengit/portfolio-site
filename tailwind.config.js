@@ -15,9 +15,20 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
         },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
-        marquee: "marquee 28s linear infinite",
+        marquee: "marquee 36s linear infinite",
+        "fade-up": "fadeUp 500ms cubic-bezier(0.645, 0.045, 0.355, 1) both",
+      },
+      transitionTimingFunction: {
+        portfolio: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      },
+      boxShadow: {
+        lift: "0 20px 30px -15px rgb(0 0 0 / 0.35)",
       },
     },
   },
@@ -29,6 +40,18 @@ export default {
         html: { scrollBehavior: "smooth" },
         body: { minHeight: "100vh" },
         "#root": { minHeight: "100vh" },
+        ":focus-visible": {
+          outline: "2px solid var(--color-primary)",
+          outlineOffset: "3px",
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          html: { scrollBehavior: "auto" },
+          "*, *::before, *::after": {
+            animationDuration: "0.01ms !important",
+            animationIterationCount: "1 !important",
+            transitionDuration: "0.01ms !important",
+          },
+        },
         '[data-theme="dark"]': {
           "color-scheme": "dark",
           "--color-base-100": "#0c0f14",

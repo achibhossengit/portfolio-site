@@ -12,9 +12,9 @@ const SKILLS = [
 ];
 
 const About = () => (
-  <section className="flex scroll-mt-20 flex-col gap-3" id="about">
+  <section className="flex scroll-mt-20 flex-col gap-4" id="about">
     <Divider label="About Me" />
-    <div className="flex flex-col gap-3 text-base leading-relaxed">
+    <div className="flex max-w-3xl flex-col gap-4 text-base leading-relaxed text-base-content/80">
       <p>
         I started programming by writing code, but over time I became more
         interested in what happens behind it — how applications are structured,
@@ -35,9 +35,12 @@ const About = () => (
         design and ship software.
       </p>
     </div>
-    <ul className="m-0 grid list-none grid-cols-2 gap-x-6 gap-y-1.5 p-0 font-mono text-sm">
+    <ul className="m-0 grid list-none grid-cols-1 gap-x-8 gap-y-2 p-0 font-mono text-sm min-[420px]:grid-cols-2">
       {SKILLS.map((skill) => (
-        <li key={skill}>
+        <li
+          className="transition duration-200 ease-portfolio hover:translate-x-1 hover:text-base-content motion-reduce:transform-none"
+          key={skill}
+        >
           <span className="mr-1.5 text-primary" aria-hidden="true">
             &gt;
           </span>

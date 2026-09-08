@@ -40,13 +40,13 @@ const LogoMarquee = () => {
 
   return (
     <div
-      className="overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] hover:[&_.marquee-track]:[animation-play-state:paused]"
+      className="overflow-hidden py-6 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] hover:[&_.marquee-track]:[animation-play-state:paused]"
       aria-label="Technologies"
     >
-      <div className="marquee-track flex w-max items-center gap-12 animate-marquee motion-reduce:animate-none">
+      <div className="marquee-track flex w-max items-center gap-10 animate-marquee sm:gap-12 motion-reduce:animate-none">
         {loop.map(({ name, Icon, color }, index) => (
           <span
-            className="inline-flex shrink-0 items-center justify-center text-base-content/55 transition-colors duration-200 hover:text-[var(--brand-color)]"
+            className="inline-flex shrink-0 items-center justify-center text-base-content/50 transition duration-200 ease-portfolio hover:-translate-y-1 hover:scale-110 hover:text-[var(--brand-color)] motion-reduce:transform-none"
             key={`${name}-${index}`}
             role="img"
             aria-label={name}

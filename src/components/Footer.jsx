@@ -17,7 +17,7 @@ const SocialLinks = ({ className = "" }) => (
   <div className={className} aria-label="Social links">
     {SOCIAL_LINKS.map(({ label, href, Icon }) => (
       <a
-        className="text-xl text-base-content/65 transition hover:-translate-y-1 hover:text-primary"
+        className="text-xl text-base-content/60 transition duration-200 ease-portfolio hover:-translate-y-[3px] hover:text-primary motion-reduce:transform-none"
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -32,7 +32,7 @@ const SocialLinks = ({ className = "" }) => (
 );
 
 const Footer = () => (
-  <footer className="mt-20 pb-6 text-center font-mono text-xs text-base-content/65">
+  <footer className="mt-20 pb-8 text-center font-mono text-xs text-base-content/60 md:mt-24">
     <aside className="fixed bottom-0 left-6 z-40 hidden flex-col items-center gap-5 lg:flex">
       <SocialLinks className="flex flex-col items-center gap-5" />
       <span
@@ -43,7 +43,7 @@ const Footer = () => (
 
     <aside className="fixed bottom-0 right-6 z-40 hidden flex-col items-center gap-5 lg:flex">
       <a
-        className="font-mono text-xs tracking-widest text-base-content/70 transition-colors [writing-mode:vertical-rl] hover:text-primary"
+        className="font-mono text-xs tracking-widest text-base-content/70 transition duration-200 ease-portfolio [writing-mode:vertical-rl] hover:-translate-y-[3px] hover:text-primary motion-reduce:transform-none"
         href="mailto:mail.achibhossen@gmail.com"
       >
         mail.achibhossen@gmail.com
@@ -60,7 +60,7 @@ const Footer = () => (
       <p className="m-0">
         Inspired from{" "}
         <a
-          className="transition-colors hover:text-primary"
+          className="bg-[linear-gradient(var(--color-primary),var(--color-primary))] bg-[length:0_1px] bg-left-bottom bg-no-repeat pb-0.5 transition-[background-size,color] duration-200 ease-portfolio hover:bg-[length:100%_1px] hover:text-primary"
           href="https://github.com/mustaquenadim/mustaquenadim.github.io"
           target="_blank"
           rel="noopener noreferrer"
@@ -71,7 +71,7 @@ const Footer = () => (
       <p className="m-0">
         Developed by{" "}
         <a
-          className="transition-colors hover:text-primary"
+          className="bg-[linear-gradient(var(--color-primary),var(--color-primary))] bg-[length:0_1px] bg-left-bottom bg-no-repeat pb-0.5 transition-[background-size,color] duration-200 ease-portfolio hover:bg-[length:100%_1px] hover:text-primary"
           href="https://github.com/achibhossengit"
           target="_blank"
           rel="noopener noreferrer"

@@ -7,7 +7,7 @@ const SpecList = ({ items }) => (
         <span className="mr-1.5 text-primary" aria-hidden="true">
           &gt;
         </span>
-        <span className="font-medium text-base-content">{label}:</span>{" "}
+        <span className="font-medium text-base-content/90">{label}:</span>{" "}
         <span className="text-base-content/70">{value}</span>
       </li>
     ))}
@@ -16,24 +16,30 @@ const SpecList = ({ items }) => (
 
 const Workstation = () => (
   <section className="scroll-mt-20" id="workstation">
-    <h3 className="mt-8 text-center text-2xl font-semibold uppercase">Workstation</h3>
-    <div className="mt-3 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_19rem]">
-      <figure className="order-2 mx-auto w-full max-w-[19rem] pb-2 pr-2 md:mx-0">
+    <h3 className="mt-10 text-center text-2xl font-semibold uppercase text-base-content/90">
+      Workstation
+    </h3>
+    <div className="mt-5 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_19rem]">
+      <figure className="group order-2 mx-auto w-full max-w-[19rem] pb-4 pr-4 md:mx-0">
         <div className="relative">
           <div
-            className="pointer-events-none absolute inset-0 translate-x-2 translate-y-2 rounded-md border border-primary"
+            className="pointer-events-none absolute inset-0 translate-x-2 translate-y-2 rounded-md border border-primary transition-transform duration-300 ease-portfolio group-hover:translate-x-3 group-hover:translate-y-3 motion-reduce:transform-none"
             aria-hidden="true"
           />
           <img
             src={workstationImage}
             alt="Desktop workstation with dual monitors"
-            className="relative aspect-[19/10] w-full rounded-md border border-base-content/20 object-cover"
+            className="relative aspect-[19/10] w-full rounded-md border border-base-content/20 object-cover saturate-[.72] transition duration-300 ease-portfolio group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:saturate-100 group-hover:shadow-lift motion-reduce:transform-none"
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-md bg-primary opacity-20 mix-blend-color transition duration-300 ease-portfolio group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:opacity-0 motion-reduce:transform-none"
+            aria-hidden="true"
           />
         </div>
       </figure>
       <div className="order-1 flex flex-col gap-6">
         <div>
-          <h4 className="m-0 text-base font-semibold">Primary — Desktop</h4>
+          <h4 className="m-0 text-base font-semibold text-base-content/90">Primary — Desktop</h4>
           <SpecList
             items={[
               { label: "Processor", value: "AMD Ryzen 7 5700G" },
@@ -48,7 +54,9 @@ const Workstation = () => (
           />
         </div>
         <div>
-          <h4 className="m-0 text-base font-semibold">Secondary — Lenovo Slim 3</h4>
+          <h4 className="m-0 text-base font-semibold text-base-content/90">
+            Secondary — Lenovo Slim 3
+          </h4>
           <SpecList
             items={[
               { label: "Processor", value: "Intel Core i3" },

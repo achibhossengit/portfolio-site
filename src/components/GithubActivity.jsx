@@ -14,12 +14,12 @@ const GithubActivity = ({ theme }) => (
     aria-labelledby="github-contributions-title"
   >
     <h3
-      className="mb-6 mt-16 text-center text-xl font-semibold"
+      className="mb-6 mt-20 text-center text-2xl font-semibold text-base-content/90 md:mt-24"
       id="github-contributions-title"
     >
       GitHub Contributions
     </h3>
-    <div className="mt-3 w-full overflow-x-auto pb-1 font-mono text-base-content/60 [&_.react-activity-calendar]:mx-auto [&_.react-activity-calendar]:w-max [&_.react-activity-calendar]:max-w-full">
+    <div className="mt-3 w-full overflow-x-auto pb-1 font-mono text-base-content/60 transition-opacity duration-200 hover:text-base-content/80 [&_.react-activity-calendar]:mx-auto [&_.react-activity-calendar]:w-max [&_.react-activity-calendar]:max-w-full">
       <GitHubCalendar
         username={GITHUB_USERNAME}
         colorScheme={theme === "dark" ? "dark" : "light"}

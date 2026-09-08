@@ -21,7 +21,7 @@ const Index = () => {
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
-    <main className="flex min-h-screen items-start justify-center bg-base-100 px-4 pb-6 pt-16 font-sans text-base-content">
+    <main className="flex min-h-screen items-start justify-center bg-base-100 px-5 pb-6 pt-24 font-sans text-base-content sm:px-6 lg:px-8">
       <Topbar theme={theme} onToggleTheme={toggleTheme} />
       <div className="flex w-full max-w-[800px] flex-col overflow-x-clip">
         <Profile />
