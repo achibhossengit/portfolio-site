@@ -4,6 +4,8 @@ import { FiExternalLink, FiFolder } from "react-icons/fi";
 import Divider from "@/components/Divider";
 import GithubActivity from "@/components/GithubActivity";
 
+const NOTEWORTHY_LIMIT = 4;
+
 const ProjectPreview = ({ project }) => {
   const href = project.live_link || project.repo_link;
   const preview = (
@@ -162,7 +164,7 @@ const NoteworthyProject = ({ project }) => {
   const href = project.live_link || project.repo_link;
 
   return (
-    <li className="group flex h-full flex-col rounded-md bg-base-200 p-5 transition duration-300 ease-portfolio hover:-translate-y-[7px] hover:shadow-lift focus-within:-translate-y-[7px] focus-within:shadow-lift motion-reduce:transform-none">
+    <li className="group flex h-full flex-col rounded-md bg-base-200 p-5 animate-fade-up transition duration-300 ease-portfolio hover:-translate-y-[7px] hover:shadow-lift focus-within:-translate-y-[7px] focus-within:shadow-lift motion-reduce:animate-none motion-reduce:transform-none">
       <div className="mb-5 flex items-center justify-between gap-3">
         <FiFolder className="text-3xl text-primary" aria-hidden="true" />
         <div className="relative z-10 flex items-center gap-3">
@@ -218,6 +220,7 @@ const NoteworthyProject = ({ project }) => {
 
 const Projects = ({ theme }) => {
   const [projects, setProjects] = useState([]);
+  const [showAllNoteworthy, setShowAllNoteworthy] = useState(false);
 
   useEffect(() => {
     fetch("/projects.json")
@@ -228,6 +231,9 @@ const Projects = ({ theme }) => {
 
   const featuredProjects = projects.filter((project) => project.is_featured);
   const noteworthyProjects = projects.filter((project) => !project.is_featured);
+  const visibleNoteworthyProjects = showAllNoteworthy
+    ? noteworthyProjects
+    : noteworthyProjects.slice(0, NOTEWORTHY_LIMIT);
 
   return (
     <section className="scroll-mt-20" id="projects">
@@ -245,11 +251,27 @@ const Projects = ({ theme }) => {
           >
             Other Noteworthy Projects
           </h3>
-          <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-            {noteworthyProjects.map((project) => (
+          <ul
+            className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2"
+            id="noteworthy-projects-list"
+          >
+            {visibleNoteworthyProjects.map((project) => (
               <NoteworthyProject key={project.title} project={project} />
             ))}
           </ul>
+          {noteworthyProjects.length > NOTEWORTHY_LIMIT && (
+            <div className="mt-8 flex justify-center">
+              <button
+                type="button"
+                className="btn btn-outline btn-sm transition duration-200 ease-portfolio hover:-translate-x-1 hover:-translate-y-1 hover:border-primary hover:bg-transparent hover:text-primary hover:shadow-[4px_4px_0_0_var(--color-primary)] focus-visible:-translate-x-1 focus-visible:-translate-y-1 focus-visible:border-primary focus-visible:text-primary focus-visible:shadow-[4px_4px_0_0_var(--color-primary)] motion-reduce:transform-none"
+                aria-controls="noteworthy-projects-list"
+                aria-expanded={showAllNoteworthy}
+                onClick={() => setShowAllNoteworthy((current) => !current)}
+              >
+                {showAllNoteworthy ? "Show Less" : "Show More"}
+              </button>
+            </div>
+          )}
         </section>
       )}
       <GithubActivity theme={theme} />
