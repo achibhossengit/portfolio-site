@@ -24,36 +24,93 @@ const ProjectPreview = ({ project }) => (
   </div>
 );
 
+const ProjectLinks = ({ project, className = "" }) => (
+  <div className={`relative z-10 flex items-center gap-3 ${className}`}>
+    {project.repo_link && (
+      <a
+        className="text-xl transition-colors hover:text-primary"
+        href={project.repo_link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${project.title} source code`}
+        title="Source code"
+      >
+        <FaGithub />
+      </a>
+    )}
+    {project.live_link && project.live_link !== project.repo_link && (
+      <a
+        className="text-xl transition-colors hover:text-primary"
+        href={project.live_link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${project.title}`}
+        title="Open project"
+      >
+        <FiExternalLink />
+      </a>
+    )}
+  </div>
+);
+
 const ProjectItem = ({ project, index }) => {
   const reversed = index % 2 === 1;
+  const href = project.live_link || project.repo_link;
 
   return (
-    <li className="relative grid md:min-h-[19rem] md:grid-cols-12 md:items-center">
+    <li className="relative -mx-2 grid overflow-hidden rounded-md bg-base-200 shadow-lg md:mx-0 md:min-h-[19rem] md:grid-cols-12 md:items-center md:overflow-visible md:rounded-none md:bg-transparent md:shadow-none">
       <div
-        className={`md:col-span-7 md:row-start-1 ${
+        className="pointer-events-none absolute inset-0 md:hidden"
+        aria-hidden="true"
+      >
+        {project.image ? (
+          <img
+            src={project.image}
+            alt=""
+            className="h-full w-full object-cover opacity-25"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-base-300/40" />
+        )}
+      </div>
+
+      <div
+        className={`hidden md:col-span-7 md:row-start-1 md:block ${
           reversed ? "md:col-start-6" : "md:col-start-1"
         }`}
       >
         <ProjectPreview project={project} />
       </div>
+
       <div
-        className={`z-10 mt-4 md:mt-0 md:col-span-7 md:row-start-1 ${
+        className={`relative z-10 flex flex-col justify-center px-6 py-8 md:col-span-7 md:row-start-1 md:p-0 ${
           reversed
             ? "md:col-start-1 md:text-left"
             : "md:col-start-6 md:text-right"
         }`}
       >
         <p className="mb-1 font-mono text-xs text-primary">Featured Project</p>
-        <h3 className="mb-3 text-xl font-semibold">
-          {project.title}
+        <h3 className="mb-3 text-2xl font-semibold text-base-content md:text-xl">
+          {href ? (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="static before:absolute before:inset-0 before:z-[1] before:content-[''] md:before:hidden"
+            >
+              {project.title}
+            </a>
+          ) : (
+            project.title
+          )}
         </h3>
-        <div className="rounded-md bg-base-200 p-5 shadow-lg">
-          <p className="m-0 text-[0.95rem] leading-relaxed text-base-content/75">
+        <div className="py-4 md:rounded-md md:bg-base-200 md:p-5 md:shadow-lg">
+          <p className="m-0 text-[0.95rem] leading-relaxed text-base-content/80 md:text-base-content/75">
             {project.description}
           </p>
         </div>
         <ul
-          className={`my-4 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 font-mono text-xs text-base-content/60 ${
+          className={`mb-4 mt-1 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 font-mono text-xs text-base-content/80 md:my-4 md:text-base-content/60 ${
             reversed ? "md:justify-start" : "md:justify-end"
           }`}
           aria-label={`${project.title} technologies`}
@@ -62,36 +119,10 @@ const ProjectItem = ({ project, index }) => {
             <li key={technology}>{technology}</li>
           ))}
         </ul>
-        <div
-          className={`flex items-center gap-3 ${
-            reversed ? "md:justify-start" : "md:justify-end"
-          }`}
-        >
-          {project.repo_link && (
-            <a
-              className="text-xl transition-colors hover:text-primary"
-              href={project.repo_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${project.title} source code`}
-              title="Source code"
-            >
-              <FaGithub />
-            </a>
-          )}
-          {project.live_link && project.live_link !== project.repo_link && (
-            <a
-              className="text-xl transition-colors hover:text-primary"
-              href={project.live_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${project.title}`}
-              title="Open project"
-            >
-              <FiExternalLink />
-            </a>
-          )}
-        </div>
+        <ProjectLinks
+          project={project}
+          className={reversed ? "md:justify-start" : "md:justify-end"}
+        />
       </div>
     </li>
   );
@@ -158,7 +189,7 @@ const Projects = () => {
   return (
     <section className="scroll-mt-20" id="projects">
       <Divider label="Projects" />
-      <ul className="mb-0 ml-0 mr-0 mt-6 flex list-none flex-col gap-16 p-0 md:gap-20">
+      <ul className="mb-0 ml-0 mr-0 mt-6 flex list-none flex-col gap-8 p-0 md:gap-20">
         {featuredProjects.map((project, index) => (
           <ProjectItem key={project.title} project={project} index={index} />
         ))}
