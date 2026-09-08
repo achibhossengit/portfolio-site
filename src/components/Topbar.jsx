@@ -3,9 +3,9 @@ import { FaGithub, FaLinkedin, FaSun, FaMoon, FaHome } from "react-icons/fa";
 
 const NAV_LINKS = [
   { index: "01", label: "About", href: "#about" },
-  { index: "02", label: "GitHub", href: "#github" },
-  { index: "03", label: "Projects", href: "#projects" },
-  { index: "04", label: "Setup", href: "#workstation" },
+  { index: "02", label: "Setup", href: "#workstation" },
+  { index: "03", label: "GitHub", href: "#github" },
+  { index: "04", label: "Projects", href: "#projects" },
 ];
 
 const Topbar = ({ theme, onToggleTheme }) => {

@@ -27,9 +27,9 @@ const Index = () => {
       <div className="flex w-full max-w-[720px] flex-col overflow-x-clip">
         <Profile />
         <About />
+        <Workstation />
         <GithubActivity theme={theme} />
         <Projects />
-        <Workstation />
       </div>
     </main>
   );
