@@ -16,7 +16,6 @@ const copy = {
   name: "Achib Hossen",
   projectsTitle: "Projects",
   activityTitle: "GitHub",
-  visitsLabel: "visits",
   intro: (
     <p>
       Hi, I&apos;m <Hl>Achib Hossen</Hl>, a <Hl>Backend Developer</Hl>{" "}
@@ -52,22 +51,9 @@ const copy = {
   },
 };
 
-const VISIT_CACHE_KEY = "portfolio-visit-count";
-const VISIT_COUNTER_URL =
-  "https://hitscounter.dev/api/hit?url=https%3A%2F%2Fachibhossen.me&label=Visitors&color=%237dd3c0";
-
-const parseVisitCount = (svgText) => {
-  const labelMatch = svgText.match(/aria-label="[^"]*?(\d[\d,]*)\s*\/\s*(\d[\d,]*)"/i);
-  if (labelMatch) return Number(labelMatch[1].replace(/,/g, ""));
-  const titleMatch = svgText.match(/<title>[^<]*?(\d[\d,]*)\s*\/\s*(\d[\d,]*)/i);
-  if (titleMatch) return Number(titleMatch[1].replace(/,/g, ""));
-  return null;
-};
-
 const Index = () => {
   const [theme, setTheme] = useState("dark");
   const [projects, setProjects] = useState([]);
-  const [visits, setVisits] = useState(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -86,40 +72,12 @@ const Index = () => {
       .catch(() => setProjects([]));
   }, []);
 
-  useEffect(() => {
-    const cached = sessionStorage.getItem(VISIT_CACHE_KEY);
-    if (cached) {
-      setVisits(Number(cached));
-      return;
-    }
-
-    let active = true;
-    fetch(VISIT_COUNTER_URL)
-      .then((res) => res.text())
-      .then((svg) => {
-        const count = parseVisitCount(svg);
-        if (!active || count == null) return;
-        sessionStorage.setItem(VISIT_CACHE_KEY, String(count));
-        setVisits(count);
-      })
-      .catch(() => {});
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
     <main className="page">
       <div className="frame">
         <header className="topbar">
-          <p className="visit-count" aria-live="polite">
-            {visits != null
-              ? `${visits.toLocaleString("en-US")} ${copy.visitsLabel}`
-              : ""}
-          </p>
           <div className="topbar-actions">
             <a
               className="icon-btn"
