@@ -78,8 +78,10 @@ const Topbar = ({ theme, onToggleTheme }) => {
         <nav className="flex shrink-0 gap-x-3 sm:gap-x-4" aria-label="Sections">
           {NAV_LINKS.map(({ label, href }) => (
             <a
-              className={`relative whitespace-nowrap py-2 font-mono text-sm text-primary transition-colors duration-200 ease-portfolio after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:bg-primary after:transition-transform after:duration-200 after:ease-portfolio hover:after:scale-x-100 focus-visible:after:scale-x-100 ${
-                activeSection === href.slice(1) ? "after:scale-x-100" : "after:scale-x-0"
+              className={`relative whitespace-nowrap py-2 font-mono text-sm transition-colors duration-200 ease-portfolio after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:bg-primary after:transition-transform after:duration-200 after:ease-portfolio hover:text-primary focus-visible:text-primary ${
+                activeSection === href.slice(1)
+                  ? "text-primary after:scale-x-100"
+                  : "text-base-content/70 after:scale-x-0"
               }`}
               href={href}
               key={href}
