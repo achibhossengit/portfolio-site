@@ -1,7 +1,10 @@
 const SpecList = ({ items }) => (
   <ul className="m-0 mt-2 flex list-none flex-col gap-1.5 p-0 font-mono text-sm leading-relaxed">
     {items.map(({ label, value }) => (
-      <li key={label}>
+      <li
+        className="transition duration-200 ease-portfolio hover:translate-x-1 hover:text-base-content motion-reduce:transform-none"
+        key={label}
+      >
         <span className="mr-1.5 text-primary" aria-hidden="true">
           &gt;
         </span>
