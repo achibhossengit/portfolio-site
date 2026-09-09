@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMedium, FaYoutube } from "react-icons/fa";
+import { SiCodeforces } from "react-icons/si";
 
 const SOCIAL_LINKS = [
   {
@@ -10,6 +11,21 @@ const SOCIAL_LINKS = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/achibhossen/",
     Icon: FaLinkedin,
+  },
+  {
+    label: "Medium",
+    href: "https://medium.com/@achibhossen",
+    Icon: FaMedium,
+  },
+  {
+    label: "Codeforces",
+    href: "https://codeforces.com/profile/achibhossen",
+    Icon: SiCodeforces,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@achibhossen",
+    Icon: FaYoutube,
   },
 ];
 
