@@ -16,11 +16,10 @@ const About = () => (
     <Divider label="About Me" />
     <div className="flex max-w-3xl flex-col gap-2 text-base leading-relaxed text-base-content/80">
       <p>
-        I started programming by solving coding problems accross different
-        platforms. But over time I became more curious about how applications
-        work behind the scenes and how reliable software solves real-world
-        problems.This curiosity led me to explore the complete software
-        development lifecycle.
+        I started programming by solving coding problems. Over time, I became
+        more curious about how applications work behind the scenes and how
+        software solves real-world problems. This curiosity led me to explore
+        the complete software development lifecycle.
       </p>
       <p>
         I enjoy designing APIs, databases, authentication, and business logic,
