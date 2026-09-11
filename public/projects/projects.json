@@ -20,7 +20,7 @@
   {
     "title": "Dcom",
     "type": "E-commerce Application",
-    "image": null,
+    "image": "/projects/images/dcom.png",
     "description": "Multi-role e-commerce platform with customer shopping, manager inventory/order control, and rider delivery workflows — including guest cart merge, order tracking, and Google auth.",
     "techStack": [
       "Django",
