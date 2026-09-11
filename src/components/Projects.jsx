@@ -144,8 +144,8 @@ const ProjectItem = ({ project, index }) => {
           </p>
         </div>
         <ul
-          className={`mb-4 mt-1 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 font-mono text-xs text-base-content/80 md:my-4 md:text-base-content/60 ${
-            reversed ? "md:justify-start" : "md:justify-end"
+          className={`mb-4 mt-1 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 font-mono text-xs text-base-content/80 md:my-4 md:max-w-[70%] md:text-base-content/70 ${
+            reversed ? "md:mr-auto md:justify-start" : "md:ml-auto md:justify-end"
           }`}
           aria-label={`${project.title} technologies`}
         >
