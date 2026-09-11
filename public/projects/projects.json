@@ -1,39 +1,65 @@
 [
   {
-    "title": "Site Manager",
-    "image": "/projects/images/site-manager.png",
-    "description": "Employee management and cost tracking system for construction sites — attendance, expenses, daily records, and role-based access for managers and contractors.",
-    "techStack": ["Django", "DRF", "React", "PostgreSQL"],
+    "title": "SiteMan",
+    "type": "SaaS Application",
+    "image": "/projects/images/siteman.png",
+    "description": "Mobile-first, multi-tenant SaaS for construction companies to manage site labour, attendance, cash, and payables with role-based access and a complete audit log.",
+    "techStack": [
+      "Django",
+      "DRF",
+      "React",
+      "PostgreSQL",
+      "Redis",
+      "Cloudflare R2"
+    ],
     "is_featured": true,
     "status": "ongoing",
-    "repo_link": "https://github.com/achibhossengit/site-manager-api",
-    "live_link": "https://github.com/achibhossengit/site-manager-client"
+    "repo_link": "https://github.com/achibhossengit/siteman-api",
+    "live_link": "https://siteman.achibhossen.me"
+  },
+  {
+    "title": "Dcom",
+    "type": "E-commerce Application",
+    "image": null,
+    "description": "Multi-role e-commerce platform with customer shopping, manager inventory/order control, and rider delivery workflows — including guest cart merge, order tracking, and Google auth.",
+    "techStack": [
+      "Django",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "django-allauth",
+      "Redis",
+      "Cloudinary"
+    ],
+    "is_featured": true,
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/ecom-django-fullstack",
+    "live_link": "https://dcom.achibhossen.me"
   },
   {
     "title": "PhiMart",
     "image": null,
     "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
-    "techStack": ["Django", "DRF", "React", "PostgreSQL"],
+    "techStack": [
+      "Django",
+      "DRF",
+      "React",
+      "PostgreSQL"
+    ],
     "is_featured": true,
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Phimart-client",
     "live_link": "https://phimart-client-ruddy.vercel.app"
   },
   {
-    "title": "Ecom Django Fullstack",
-    "image": null,
-    "description": "Full-stack e-commerce application built with Django — product management and shopping workflow in one codebase.",
-    "techStack": ["Django", "Python", "PostgreSQL"],
-    "is_featured": false,
-    "status": "completed",
-    "repo_link": "https://github.com/achibhossengit/ecom-django-fullstack",
-    "live_link": "https://github.com/achibhossengit/ecom-django-fullstack"
-  },
-  {
     "title": "Find Roomies",
     "image": null,
     "description": "Roommate finder with client and server — profiles, preferences, and matching for shared accommodations.",
-    "techStack": ["React", "Node.js", "Express.js", "MongoDB"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB"
+    ],
     "is_featured": false,
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Find-Roomies-Server",
@@ -43,7 +69,11 @@
     "title": "Library Manager",
     "image": null,
     "description": "Library management system with separate client and server for books, users, and borrowing workflows.",
-    "techStack": ["React", "Node.js", "Express.js"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express.js"
+    ],
     "is_featured": false,
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Library-Manager-Server",
@@ -53,7 +83,12 @@
     "title": "Event Manager",
     "image": null,
     "description": "Event planning app with CRUD operations, categories, and user management.",
-    "techStack": ["Django", "HTML", "CSS", "JavaScript"],
+    "techStack": [
+      "Django",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "is_featured": false,
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Event-Manager",

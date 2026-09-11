@@ -121,8 +121,7 @@ const ProjectItem = ({ project, index }) => {
             : "md:col-start-6 md:text-right"
         }`}
       >
-        <p className="mb-1 font-mono text-xs text-primary">Featured Project</p>
-        <h3 className="mb-3 text-2xl font-semibold text-base-content md:text-xl">
+        <h3 className="mb-1 text-2xl font-semibold text-base-content md:text-xl">
           {href ? (
             <a
               href={href}
@@ -136,6 +135,9 @@ const ProjectItem = ({ project, index }) => {
             <>{project.title}</>
           )}
         </h3>
+        {project.type && (
+          <p className="mb-3 font-mono text-xs text-primary">{project.type}</p>
+        )}
         <div className="py-4 md:rounded-md md:bg-base-200 md:p-5 md:shadow-lg">
           <p className="m-0 text-[0.95rem] leading-relaxed text-base-content/80 md:text-base-content/75">
             {project.description}
