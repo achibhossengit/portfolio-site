@@ -36,6 +36,24 @@
     "live_link": "https://dcom.achibhossen.me"
   },
   {
+    "title": "ProFast",
+    "type": "Parcel Delivery Application",
+    "image": "/projects/images/profast.png",
+    "description": "Multi-role parcel delivery platform for Bangladesh with send/track/pay flows, rider collection and earnings, and admin operations — including Firebase auth, Stripe payments, and a nationwide coverage map.",
+    "techStack": [
+      "React",
+      "Express",
+      "MongoDB",
+      "Firebase",
+      "Stripe",
+      "Tailwind CSS"
+    ],
+    "is_featured": true,
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/profast-client",
+    "live_link": "https://profast.achibhossen.me"
+  },
+  {
     "title": "PhiMart",
     "image": null,
     "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
@@ -45,7 +63,7 @@
       "React",
       "PostgreSQL"
     ],
-    "is_featured": true,
+    "is_featured": false,
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Phimart-client",
     "live_link": "https://phimart-client-ruddy.vercel.app"
