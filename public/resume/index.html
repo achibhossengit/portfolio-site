@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achib Hossen — Fullstack Developer Resume</title>
+    <style>
+      :root {
+        --ink: #111111;
+        --muted: #333a45;
+        --line: #c5ccd6;
+        --accent: #0a2540;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      body {
+        color: var(--ink);
+        font-family: Cambria, Georgia, "Times New Roman", serif;
+        font-size: 10.15pt;
+        font-weight: 400;
+        line-height: 1.32;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: geometricPrecision;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        padding: 11mm 13mm 10mm;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        color: var(--accent);
+        font-size: 23.5pt;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        line-height: 1.05;
+      }
+
+      .role {
+        color: var(--accent);
+        font-size: 11pt;
+        font-weight: 400;
+        margin-top: 3px;
+      }
+
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px 14px;
+        margin-top: 7px;
+        color: var(--ink);
+        font-size: 9.6pt;
+      }
+
+      .contacts a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .contacts span,
+      .contacts a {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .contacts svg {
+        width: 11px;
+        height: 11px;
+        fill: var(--ink);
+        flex-shrink: 0;
+      }
+
+      section {
+        margin-top: 18px;
+      }
+
+      h2 {
+        color: var(--accent);
+        font-size: 13pt;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid var(--accent);
+        padding-bottom: 3px;
+        margin-bottom: 11px;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 24px;
+      }
+
+      .skill h3 {
+        color: var(--ink);
+        font-size: 10.8pt;
+        font-weight: 700;
+        margin-bottom: 3px;
+      }
+
+      .skill p {
+        color: var(--ink);
+      }
+
+      .school {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 2px;
+      }
+
+      .school-title {
+        font-weight: 400;
+        font-size: 10.15pt;
+      }
+
+      .meta {
+        color: var(--ink);
+        font-size: 9.7pt;
+        white-space: nowrap;
+      }
+
+      ul {
+        margin: 5px 0 7px 16px;
+      }
+
+      li {
+        margin-bottom: 3px;
+      }
+
+      li::marker {
+        color: var(--accent);
+      }
+
+      .project {
+        margin-bottom: 18px;
+      }
+
+      .project:last-child {
+        margin-bottom: 0;
+      }
+
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .project h3 {
+        font-size: 10.8pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .project h3 span {
+        font-weight: 400;
+        font-size: 10.15pt;
+        color: var(--ink);
+      }
+
+      .project-links {
+        color: var(--accent);
+        font-size: 9.2pt;
+        white-space: nowrap;
+      }
+
+      .project-links a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .blurb {
+        margin: 4px 0 5px;
+        color: var(--ink);
+      }
+
+      .tech {
+        color: var(--ink);
+        font-size: 10.15pt;
+        font-weight: 400;
+        margin-top: 4px;
+      }
+
+      .tech strong {
+        color: var(--ink);
+        font-size: 10.8pt;
+        font-weight: 700;
+      }
+
+      .edu-list .school {
+        margin-bottom: 3px;
+      }
+
+      .note {
+        color: var(--ink);
+      }
+
+      @media print {
+        .page {
+          width: auto;
+          min-height: auto;
+          padding: 11mm 13mm 10mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Achib Hossen</h1>
+        <p class="role">Fullstack Developer</p>
+        <div class="contacts">
+          <a href="https://github.com/achibhossengit">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.68 7.68 0 0 1 8 4.07c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+            achibhossengit
+          </a>
+          <a href="https://www.linkedin.com/in/achibhossen/">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"
+              />
+            </svg>
+            achibhossen
+          </a>
+          <a href="https://achibhossen.me">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2a10 10 0 1 0 .01 20.01A10 10 0 0 0 12 2zm6.93 6h-3.17a15.7 15.7 0 0 0-1.36-3.52A8.03 8.03 0 0 1 18.93 8zM12 4.06c.7.94 1.27 2.17 1.64 3.94H10.36C10.73 6.23 11.3 5 12 4.06zM4.26 14a8.02 8.02 0 0 1 0-4h3.64a16.9 16.9 0 0 0-.16 2c0 .69.05 1.36.16 2H4.26zm.81 2h3.17c.3 1.28.76 2.47 1.36 3.52A8.03 8.03 0 0 1 5.07 16zm3.17-8H5.07A8.03 8.03 0 0 1 9.6 4.48 15.7 15.7 0 0 0 8.24 8zM12 19.94c-.7-.94-1.27-2.17-1.64-3.94h3.28c-.37 1.77-.94 3-1.64 3.94zM14.1 14h-4.2a14.9 14.9 0 0 1-.17-2c0-.69.06-1.35.17-2h4.2c.11.65.17 1.31.17 2s-.06 1.35-.17 2zm.3 5.52c.6-1.05 1.06-2.24 1.36-3.52h3.17a8.03 8.03 0 0 1-4.53 3.52zM16.1 14c.11-.64.16-1.31.16-2s-.05-1.36-.16-2h3.64a8.02 8.02 0 0 1 0 4H16.1z"
+              />
+            </svg>
+            achibhossen.me
+          </a>
+          <span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+              />
+            </svg>
+            Dhaka, Bangladesh
+          </span>
+          <a href="tel:+8801786855225">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"
+              />
+            </svg>
+            +8801786855225
+          </a>
+          <a href="mailto:mail.achibhossen@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            mail.achibhossen@gmail.com
+          </a>
+        </div>
+      </header>
+
+      <section>
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill">
+            <h3>Backend</h3>
+            <p>
+              Django, Django REST Framework, Express.js, PostgreSQL,
+              MongoDB, Redis, Firebase
+            </p>
+          </div>
+          <div class="skill">
+            <h3>Frontend</h3>
+            <p>React.js, Tailwind CSS, DaisyUI, HTML, CSS</p>
+          </div>
+          <div class="skill">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code, Docker, Cloudflare R2</p>
+          </div>
+          <div class="skill">
+            <h3>Languages</h3>
+            <p>Python, JavaScript, C, C++</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>SiteMan, <span>Saas Application</span></h3>
+            <p class="project-links">
+              <a href="https://siteman.achibhossen.me">Live</a>
+              ·
+              <a href="https://github.com/achibhossengit/siteman-api">GitHub</a>
+            </p>
+          </div>
+          <p class="blurb">
+            Mobile-first SaaS application for construction companies.
+            Contractors can manage their projects, workers, worker attendance
+            and expenses with role-based access and a complete audit log.
+          </p>
+          <ul>
+            <li>
+              Built both the Django REST Framework API and the React client:
+              company/site tenancy, JWT cookie auth, and roles for company
+              admin, site manager, and site auditor.
+            </li>
+            <li>
+              Implemented daily attendance, site cash ledgers, work sessions that
+              seal payables, date-range balance reports, and an auditor-reviewed
+              activity log.
+            </li>
+            <li>
+              Designed a mobile-first React UI and deployed the API, client, and
+              file storage independently (Railway, Netlify, Cloudflare R2).
+            </li>
+          </ul>
+          <p class="tech">
+            <strong>Technologies:</strong> Django, DRF, React, PostgreSQL, Redis,
+            Cloudflare R2, JWT, Railway, Netlify
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>Dcom, <span>E-commerce Application</span></h3>
+            <p class="project-links">
+              <a href="https://dcom.achibhossen.me">Live</a>
+              ·
+              <a href="https://github.com/achibhossengit/ecom-django-fullstack">GitHub</a>
+            </p>
+          </div>
+          <p class="blurb">
+            Multi-role e-commerce with customer shopping, manager inventory and
+            order control, and rider delivery — including guest cart merge,
+            order tracking, and Google auth.
+          </p>
+          <ul>
+            <li>
+              Designed Django models for catalog, cart, orders, and riders with
+              snapshot order items, guest-to-account cart merge, and an
+              append-only order-event audit trail.
+            </li>
+            <li>
+              Implemented atomic inventory updates, rider assignment by zone,
+              area, city, and country, django-allauth email and Google login,
+              Redis catalog cache, and Cloudinary media in production.
+            </li>
+          </ul>
+          <p class="tech">
+            <strong>Technologies:</strong> Django, PostgreSQL, Tailwind CSS,
+            DaisyUI, django-allauth, Redis, Cloudinary
+          </p>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <h3>ProFast, <span>Parcel Delivery Application</span></h3>
+            <p class="project-links">
+              <a href="https://profast.achibhossen.me">Live</a>
+              ·
+              <a href="https://github.com/achibhossengit/profast-client">GitHub</a>
+            </p>
+          </div>
+          <p class="blurb">
+            Multi-role parcel delivery platform for Bangladesh with send, track,
+            and pay flows, rider collection and earnings, and admin operations.
+          </p>
+          <ul>
+            <li>
+              Built role-based dashboards for users, riders, and admins with
+              Firebase Authentication and Express/MongoDB APIs verified by
+              Firebase Admin.
+            </li>
+            <li>
+              Implemented parcel send/track/pay with warehouse hops, Stripe
+              payments, a nationwide coverage map, and rider earnings from
+              collect and deliver work.
+            </li>
+          </ul>
+          <p class="tech">
+            <strong>Technologies:</strong> React, Express, MongoDB, Firebase,
+            Stripe, Tailwind CSS
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-list">
+          <div class="school">
+            <p class="school-title">
+              Higher Secondary Certificate (Science), Mirpur Science College
+            </p>
+            <p class="meta">2022 – 2024 | Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Additional</h2>
+        <p class="note">
+          Solved 200+ coding problems on Codeforces, LeetCode, and HackerRank.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

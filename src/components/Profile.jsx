@@ -33,7 +33,7 @@ const Profile = () => (
       </p>
       <a
         className="btn btn-outline btn-sm mt-2 transition duration-200 ease-portfolio hover:-translate-x-1 hover:-translate-y-1 hover:border-primary hover:bg-transparent hover:text-primary hover:shadow-[4px_4px_0_0_var(--color-primary)] focus-visible:-translate-x-1 focus-visible:-translate-y-1 focus-visible:border-primary focus-visible:text-primary focus-visible:shadow-[4px_4px_0_0_var(--color-primary)] motion-reduce:transform-none"
-        href="https://www.linkedin.com/in/achibhossen/"
+        href="/resume/Achib-Hossen-Fullstack-Developer-Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
