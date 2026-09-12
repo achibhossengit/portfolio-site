@@ -54,6 +54,24 @@
     "live_link": "https://profast.achibhossen.me"
   },
   {
+    "title": "Zen Library",
+    "type": "Library Management System",
+    "image": "/projects/images/zen-library.png",
+    "description": "Full-stack library platform to browse books by category, borrow and return titles, and manage a personal collection with Firebase auth and owner-only add, update, and delete.",
+    "techStack": [
+      "React",
+      "Express",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+      "DaisyUI"
+    ],
+    "is_featured": false,
+    "status": "completed",
+    "repo_link": "https://github.com/achibhossengit/library-manager-client",
+    "live_link": "https://library-manager-99af2.web.app"
+  },
+  {
     "title": "PhiMart",
     "image": null,
     "description": "Full-stack e-commerce platform with product catalog, cart, checkout, and order flow. React client backed by a Django REST API.",
@@ -82,20 +100,6 @@
     "status": "completed",
     "repo_link": "https://github.com/achibhossengit/Find-Roomies-Server",
     "live_link": "https://github.com/achibhossengit/Find-Roomies-Client"
-  },
-  {
-    "title": "Library Manager",
-    "image": null,
-    "description": "Library management system with separate client and server for books, users, and borrowing workflows.",
-    "techStack": [
-      "React",
-      "Node.js",
-      "Express.js"
-    ],
-    "is_featured": false,
-    "status": "completed",
-    "repo_link": "https://github.com/achibhossengit/Library-Manager-Server",
-    "live_link": "https://github.com/achibhossengit/Library-Manager-Client"
   },
   {
     "title": "Event Manager",
